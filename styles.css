@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box; /* Evita que los bordes y paddings deformen las cajas */
+}
+
+body {
+    background-color: #00b327;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif; /* Tipografía más limpia */
+}
+
+header, footer {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.catalogo-header {
+    text-align: center;
+    margin: 0;
+    padding: 2rem;
+    background-color: #fff;
+    border-bottom: 4px solid #0051b3; /* Un toque visual para separar el header */
+}
+
+.catalogo {
+    max-width: 1200px; /* Centra el contenido en pantallas grandes */
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.seccion-cartas h2 {
+    color: #fff; /* Contraste contra el fondo verde */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* El grid se aplica al contenedor de los productos, NO al catálogo completo */
+.grilla-productos {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 220px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem; /* Espacio para que el scrollbar no tape las cartas */
+}
+
+.card {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    position: relative; 
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f9f9f9; /* Fondo claro por si la imagen tiene transparencias */
+}
+
+.card-img img {
+    width: 100%;       
+    height: 100%;
+    object-fit: contain; 
+    padding: 0.5rem; /* Pequeño respiro interno para la imagen */
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #e53935;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.card-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.card-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #111;
+    margin: 0 0 1rem 0;
+}
+
+.old-price {
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 4px;
+}
+
+.btn-comprar {
+    margin-top: auto;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #0051b3;
+}
