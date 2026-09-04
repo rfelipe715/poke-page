@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #00b327;
+    background-color: #a8b8cc;
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif; /* Tipografía más limpia */
 }
@@ -29,7 +29,7 @@ header, footer {
 }
 
 .seccion-cartas h2 {
-    color: #fff; /* Contraste contra el fondo verde */
+    color: #5c5959; /* Contraste contra el fondo Blanco */
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
