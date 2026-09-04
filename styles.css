@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #a8b8cc;
+    background-color: #e9ebed;
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif; /* Tipografía más limpia */
 }
@@ -29,7 +29,7 @@ header, footer {
 }
 
 .seccion-cartas h2 {
-    color: #5c5959; /* Contraste contra el fondo Blanco */
+    color: #575881; /* Contraste contra el fondo Blanco */
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
@@ -126,4 +126,85 @@ header, footer {
 
 .btn-comprar:hover {
     background-color: #0051b3;
+}
+
+/* MENU */
+
+.menu {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu a {
+    color: rgb(53, 51, 51);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ffcb05;
+}
+
+
+/* BUSCADOR */
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    gap: 10px;
+    
+}
+
+.buscador input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.buscador button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0070f3;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.buscador button:hover {
+    background-color: #0070f3;
+}
+
+.categorias {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.categorias h2 {
+    margin-bottom: 20px;
+}
+
+.lista-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.lista-categorias button {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.lista-categorias button:hover {
+    background-color: #0059c7;
 }
