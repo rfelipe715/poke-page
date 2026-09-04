@@ -19,8 +19,25 @@
         <a href="#cartas">Cartas</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
-        <a href="#">🛒 Carrito</a>
+      
+        <button class="cart-btn" id="openCart">Carrito <span class="cart-count" id="cartCount">0</span></button>
+
+        <aside class="drawer" id="drawer">
+            <div class="drawer-head">
+                <h3>Tu carrito</h3>
+                <button class="drawer-close" id="closeCart">×</button>
+            </div>
+            <div class="drawer-items" id="drawerItems">
+                <div class="drawer-empty">Tu carrito está vacío.<br>Agrega alguna carta del catálogo.</div>
+            </div>
+            <div class="drawer-foot">
+                <div class="drawer-total"><span>Total</span><span id="drawerTotal">$0</span></div>
+                <button class="checkout-btn" id="checkoutBtn" disabled="">Confirmar pedido</button>
+            </div>
+        </aside> <!-- Seccion Carro (oculto por defecto) -->
     </nav>
+
+
 
     </header>
     <section class="categorias">
@@ -135,6 +152,12 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js.js"></script>
 </body>
 
 </html>
