@@ -15,15 +15,11 @@ botonInicioSesion.addEventListener('click', function() {
     const email = inputEmail.value
 
     if (email === 'admin@tienda.cl') {
-       
-       window.location = 'index.html'
-        
         localStorage.setItem('rol_usuario', 'admin')
+        window.location = 'index.html'
     } else if (email === 'vendedor@tienda.cl') {
-        
-        window.location = 'admin/vendedor.html'
-        
         localStorage.setItem('rol_usuario', 'vendedor')
+        window.location = 'index.html'
     } else {
         alert("Credenciales incorrectas")
     }

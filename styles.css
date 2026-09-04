@@ -232,7 +232,7 @@ header, footer {
     right: -8px;
     background: #0051b3;
     color: #fff;
-    font-family: var(--font-body);
+    font-family: var(--font-body, system-ui, -apple-system, sans-serif);
     font-size: 0.7rem;
     font-weight: 700;
     width: 20px;
