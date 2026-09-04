@@ -10,9 +10,16 @@
 
 <body>
     <header class="catalogo-header">
-        <h1>Tienda de Cartas Pokémon</h1>
-        <p>Encuentra tus cartas coleccionables al mejor precio</p>
 
+    <h1>Tienda de Cartas Pokémon</h1>
+    <p>Encuentra tus cartas coleccionables al mejor precio</p>
+
+    <nav class="menu">
+        <a href="#">Inicio</a>
+        <a href="#cartas">Cartas</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      
         <button class="cart-btn" id="openCart">Carrito <span class="cart-count" id="cartCount">0</span></button>
 
         <aside class="drawer" id="drawer">
@@ -28,13 +35,35 @@
                 <button class="checkout-btn" id="checkoutBtn" disabled="">Confirmar pedido</button>
             </div>
         </aside> <!-- Seccion Carro (oculto por defecto) -->
+    </nav>
+
+
 
     </header>
+    <section class="categorias">
+    <h2>Categorías</h2>
+
+        <div class="lista-categorias">
+            <button>🔥 Fuego</button>
+            <button>💧 Agua</button>
+            <button>🌿 Planta</button>
+            <button>⚡ Eléctrico</button>
+            <button>🔮 Psíquico</button>
+        </div>
+    </section>
 
     <main class="catalogo">
-        <section class="seccion-cartas">
+        <section class="seccion-cartas" id="cartas">
             <h2>Cartas Destacadas</h2>
 
+        <div class="buscador">
+            <input
+            type="text"
+            id="buscarCarta"
+            placeholder="Buscar carta Pokémon..."
+            >
+            <button>Buscar</button>
+        </div>
             <div class="grilla-productos">
                 <article class="card">
                     <div class="card-img">
