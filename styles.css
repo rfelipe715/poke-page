@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #00b327;
+    background-color: #e9ebed;
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif; /* Tipografía más limpia */
 }
@@ -29,7 +29,7 @@ header, footer {
 }
 
 .seccion-cartas h2 {
-    color: #fff; /* Contraste contra el fondo verde */
+    color: #575881; /* Contraste contra el fondo Blanco */
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
@@ -126,4 +126,259 @@ header, footer {
 
 .btn-comprar:hover {
     background-color: #0051b3;
+}
+
+/* MENU */
+
+.menu {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu a {
+    color: rgb(53, 51, 51);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ffcb05;
+}
+
+
+/* BUSCADOR */
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    gap: 10px;
+    
+}
+
+.buscador input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.buscador button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0070f3;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.buscador button:hover {
+    background-color: #0070f3;
+}
+
+.categorias {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.categorias h2 {
+    margin-bottom: 20px;
+}
+
+.lista-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.lista-categorias button {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.lista-categorias button:hover {
+    background-color: #0059c7;
+
+}
+/*
+    CARRITO
+*/
+.cart-btn {
+    position: relative;
+    background: #e53935;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    border-radius: 10px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #0051b3;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+    SECCION CARRITO (Se muestra al hacer click en el carrito)
+*/
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(400px, 92vw);
+    background: #fff;
+    border-left: 1px solid #0051b3;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index: 51;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+.drawer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 22px 16px;
+    border-bottom: 1px solid #0051b3;
+}
+
+.drawer-head h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.drawer-close {
+    background: none;
+    border: none;
+    color: #111;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.drawer-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 22px;
+}
+
+.drawer-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #0051b3;
+}
+
+.di-art {
+    width: 46px;
+    height: 64px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.di-info {
+    flex: 1;
+}
+
+.di-info h4 {
+    margin: 0 0 4px;
+    font-size: 0.92rem;
+}
+
+.di-info p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: #a09e94;
+}
+
+.qty-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.qty-btn {
+    background: #eee;
+    border: 1px solid #0051b3;
+    color: #111;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.di-remove {
+    background: none;
+    border: none;
+    color: #a09e94;
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.drawer-empty {
+    color: #8f8d82;
+    text-align: center;
+    padding: 60px 10px;
+    font-size: 0.9rem;
+}
+
+.drawer-foot {
+    padding: 20px 22px 26px;
+    border-top: 1px solid #0051b3;
+}
+
+.drawer-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: gold;
+    color: #241a00;
+    border: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 14px;
+    border-radius: 4px;
+    cursor: pointer;
 }
