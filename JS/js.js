@@ -2,19 +2,68 @@
  * Atributos HTML
  */
 
-const openCartBtn = document.getElementById("openCart")
-const closeCartBtn = document.getElementById("closeCart")
-const cartDrawer = document.getElementById("drawer")
+const openCartBtn = document.getElementById("openCart");
+const closeCartBtn = document.getElementById("closeCart");
+const cartDrawer = document.getElementById("drawer");
 
+// FILTRO POR CATEGORIAS
+const botonesCategorias = document.querySelectorAll(".lista-categorias button");
+const cartas = document.querySelectorAll(".card");
 
-/**
- * Event listeners
- */
+botonesCategorias.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoriaSeleccionada = boton.dataset.categoria;
 
-openCartBtn.addEventListener("click", (e) => {        
-        cartDrawer.classList.toggle("open")
-})
+    cartas.forEach((carta) => {
+      const tipoCarta = carta.dataset.tipo;
 
-closeCartBtn.addEventListener("click", (e) => {        
-        cartDrawer.classList.remove("open")
-})
+      if (
+        categoriaSeleccionada === "todos" ||
+        tipoCarta === categoriaSeleccionada
+      ) {
+        carta.style.display = "";
+      } else {
+        carta.style.display = "none";
+      }
+    });
+  });
+});
+
+// BUSCADOR
+const inputBuscar = document.getElementById("buscarCarta");
+const botonBuscar = document.querySelector(".buscador button");
+
+function buscarCarta() {
+  const texto = inputBuscar.value.toLowerCase().trim();
+
+  cartas.forEach((carta) => {
+    const nombre = carta.querySelector(".card-title").textContent.toLowerCase();
+
+    if (nombre.includes(texto)) {
+      carta.style.display = "";
+    } else {
+      carta.style.display = "none";
+    }
+  });
+}
+
+botonBuscar.addEventListener("click", buscarCarta);
+
+inputBuscar.addEventListener("input", buscarCarta);
+
+//Filtro para inicio
+const parametrosURL = new URLSearchParams(window.location.search);
+
+const tipoURL = parametrosURL.get("tipo");
+
+if (tipoURL) {
+  cartas.forEach((carta) => {
+    const tipoCarta = carta.dataset.tipo;
+
+    if (tipoCarta === tipoURL) {
+      carta.style.display = "";
+    } else {
+      carta.style.display = "none";
+    }
+  });
+}

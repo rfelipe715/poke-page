@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartas Pokémon</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="catalogo-header">
+      <div class="header-contenedor">
+        <div class="logo-tienda">
+          <div class="logo-titulo">
+            <h1>PokéStore</h1>
+            <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+          </div>
+
+          <p>Cartas Pokémon para coleccionistas</p>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Inicio</a>
+          <a href="cartas.html">Cartas</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+
+          <button class="cart-btn" id="openCart">
+            Carrito 🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+          <h3>Tu carrito</h3>
+          <button class="drawer-close" id="closeCart">×</button>
+        </div>
+
+        <div class="drawer-items" id="drawerItems">
+          <div class="drawer-empty">
+            Tu carrito está vacío.<br />
+            Agrega alguna carta del catálogo.
+          </div>
+        </div>
+
+        <div class="drawer-foot">
+          <div class="drawer-total">
+            <span>Total</span>
+            <span id="drawerTotal">$0</span>
+          </div>
+
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Confirmar pedido
+          </button>
+        </div>
+      </aside>
+    </header>
+    <section class="categorias">
+      <h2>Categorías</h2>
+
+      <div class="lista-categorias">
+        <button data-categoria="todos">⭐ Todos</button>
+        <button data-categoria="fuego">🔥 Fuego</button>
+        <button data-categoria="agua">💧 Agua</button>
+        <button data-categoria="planta">🌿 Planta</button>
+        <button data-categoria="electrico">⚡ Eléctrico</button>
+        <button data-categoria="psiquico">🔮 Psíquico</button>
+        <button data-categoria="normal">⚪ Normal</button>
+        <button data-categoria="lucha">🥊 Lucha</button>
+      </div>
+    </section>
+
+    <main class="catalogo">
+      <section class="seccion-cartas">
+        <div class="buscador">
+          <input
+            type="text"
+            id="buscarCarta"
+            placeholder="Buscar carta Pokémon..."
+          />
+          <button>Buscar</button>
+        </div>
+
+        <div class="grilla-productos pagina-cartas">
+          <!-- 1 -->
+          <article class="card" data-tipo="electrico">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/58.png"
+                alt="Pikachu"
+              />
+              <span class="badge">-15% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Pikachu</h3>
+              <p class="card-price">$15.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="card" data-tipo="fuego">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/4.png"
+                alt="Charizard"
+              />
+              <span class="badge">-20% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Charizard</h3>
+              <p class="card-price">$50.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="card" data-tipo="agua">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/2.png"
+                alt="Blastoise"
+              />
+              <span class="badge">-15% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Blastoise</h3>
+              <p class="card-price">$35.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/15.png"
+                alt="Venusaur"
+              />
+              <span class="badge">-15% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Venusaur</h3>
+              <p class="card-price">$30.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/44.png"
+                alt="Bulbasaur"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Bulbasaur</h3>
+              <p class="card-price">$8.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="card" data-tipo="fuego">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/46.png"
+                alt="Charmander"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Charmander</h3>
+              <p class="card-price">$9.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="card" data-tipo="agua">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/63.png"
+                alt="Squirtle"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Squirtle</h3>
+              <p class="card-price">$8.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/45.png"
+                alt="Caterpie"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Caterpie</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/54.png"
+                alt="Metapod"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Metapod</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/33.png"
+                alt="Butterfree"
+              />
+              <span class="badge">-10% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Butterfree</h3>
+              <p class="card-price">$10.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/69.png"
+                alt="Weedle"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Weedle</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/33.png"
+                alt="Kakuna"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Kakuna</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 13 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/17.png"
+                alt="Beedrill"
+              />
+              <span class="badge">-15% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Beedrill</h3>
+              <p class="card-price">$9.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 14 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/57.png"
+                alt="Pidgey"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Pidgey</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 15 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/22.png"
+                alt="Pidgeotto"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Pidgeotto</h3>
+              <p class="card-price">$6.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 16 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/61.png"
+                alt="Rattata"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Rattata</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 17 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/62.png"
+                alt="Spearow"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Spearow</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 18 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/46.png"
+                alt="Ekans"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Ekans</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 19 -->
+          <article class="card" data-tipo="electrico">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/14.png"
+                alt="Raichu"
+              />
+              <span class="badge">-15% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Raichu</h3>
+              <p class="card-price">$18.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 20 -->
+          <article class="card" data-tipo="lucha">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/64.png"
+                alt="Sandshrew"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Sandshrew</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 21 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/55.png"
+                alt="Nidoran"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Nidoran</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 22 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/37.png"
+                alt="Nidorino"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Nidorino</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 23 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/5.png"
+                alt="Clefairy"
+              />
+              <span class="badge">-10% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Clefairy</h3>
+              <p class="card-price">$9.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 24 -->
+          <article class="card" data-tipo="fuego">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/68.png"
+                alt="Vulpix"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Vulpix</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 25 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/54.png"
+                alt="Jigglypuff"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Jigglypuff</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 26 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/57.png"
+                alt="Zubat"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Zubat</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 27 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/63.png"
+                alt="Oddish"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Oddish</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 28 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/59.png"
+                alt="Paras"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Paras</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 29 -->
+          <article class="card" data-tipo="planta">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/63.png"
+                alt="Venonat"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Venonat</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 30 -->
+          <article class="card" data-tipo="lucha">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/47.png"
+                alt="Diglett"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Diglett</h3>
+              <p class="card-price">$4.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 31 -->
+          <article class="card" data-tipo="normal">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/56.png"
+                alt="Meowth"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Meowth</h3>
+              <p class="card-price">$6.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 32 -->
+          <article class="card" data-tipo="agua">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/53.png"
+                alt="Psyduck"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Psyduck</h3>
+              <p class="card-price">$6.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 33 -->
+          <article class="card" data-tipo="lucha">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/55.png"
+                alt="Mankey"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Mankey</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 34 -->
+          <article class="card" data-tipo="fuego">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/28.png"
+                alt="Growlithe"
+              />
+              <span class="badge">-10% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Growlithe</h3>
+              <p class="card-price">$7.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 35 -->
+          <article class="card" data-tipo="agua">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/59.png"
+                alt="Poliwag"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Poliwag</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 36 -->
+          <article class="card" data-tipo="psiquico">
+            <div class="card-img">
+              <img src="https://images.pokemontcg.io/base1/43.png" alt="Abra" />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Abra</h3>
+              <p class="card-price">$6.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 37 -->
+          <article class="card" data-tipo="lucha">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/52.png"
+                alt="Machop"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Machop</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 38 -->
+          <article class="card" data-tipo="electrico">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/53.png"
+                alt="Magnemite"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Magnemite</h3>
+              <p class="card-price">$5.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 39 -->
+          <article class="card" data-tipo="psiquico">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/33.png"
+                alt="Gastly"
+              />
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Gastly</h3>
+              <p class="card-price">$6.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+
+          <!-- 40 -->
+          <article class="card" data-tipo="psiquico">
+            <div class="card-img">
+              <img
+                src="https://images.pokemontcg.io/base1/10.png"
+                alt="Mewtwo"
+              />
+              <span class="badge">-20% OFF</span>
+            </div>
+
+            <div class="card-info">
+              <h3 class="card-title">Mewtwo</h3>
+              <p class="card-price">$30.000</p>
+              <button class="btn-comprar">Agregar al carro</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="JS/js.js"></script>
+  </body>
+</html>
