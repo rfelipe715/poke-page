@@ -9,44 +9,53 @@
 
   <body>
     <header class="catalogo-header">
-      <h1>Tienda de Cartas Pokémon</h1>
-      <p>Encuentra tus cartas coleccionables al mejor precio</p>
-
-      <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="cartas.html">Cartas</a>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#contacto">Contacto</a>
-
-        <button class="cart-btn" id="openCart">
-          Carrito <span class="cart-count" id="cartCount">0</span>
-        </button>
-
-        <aside class="drawer" id="drawer">
-          <div class="drawer-head">
-            <h3>Tu carrito</h3>
-            <button class="drawer-close" id="closeCart">×</button>
+      <div class="header-contenedor">
+        <div class="logo-tienda">
+          <div class="logo-titulo">
+            <h1>PokéStore</h1>
+            <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
           </div>
 
-          <div class="drawer-items" id="drawerItems">
-            <div class="drawer-empty">
-              Tu carrito está vacío.<br />
-              Agrega alguna carta del catálogo.
-            </div>
+          <p>Cartas Pokémon para coleccionistas</p>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Inicio</a>
+          <a href="cartas.html">Cartas</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+
+          <button class="cart-btn" id="openCart">
+            Carrito 🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+          <h3>Tu carrito</h3>
+          <button class="drawer-close" id="closeCart">×</button>
+        </div>
+
+        <div class="drawer-items" id="drawerItems">
+          <div class="drawer-empty">
+            Tu carrito está vacío.<br />
+            Agrega alguna carta del catálogo.
+          </div>
+        </div>
+
+        <div class="drawer-foot">
+          <div class="drawer-total">
+            <span>Total</span>
+            <span id="drawerTotal">$0</span>
           </div>
 
-          <div class="drawer-foot">
-            <div class="drawer-total">
-              <span>Total</span>
-              <span id="drawerTotal">$0</span>
-            </div>
-
-            <button class="checkout-btn" id="checkoutBtn" disabled>
-              Confirmar pedido
-            </button>
-          </div>
-        </aside>
-      </nav>
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Confirmar pedido
+          </button>
+        </div>
+      </aside>
     </header>
     <section class="categorias">
       <h2>Categorías</h2>
@@ -65,8 +74,6 @@
 
     <main class="catalogo">
       <section class="seccion-cartas">
-        <h2>Cartas Pokémon</h2>
-
         <div class="buscador">
           <input
             type="text"

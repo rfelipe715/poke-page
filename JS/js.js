@@ -57,21 +57,13 @@ const parametrosURL = new URLSearchParams(window.location.search);
 const tipoURL = parametrosURL.get("tipo");
 
 if (tipoURL) {
+  cartas.forEach((carta) => {
+    const tipoCarta = carta.dataset.tipo;
 
-    cartas.forEach((carta) => {
-
-        const tipoCarta = carta.dataset.tipo;
-
-        if (tipoCarta === tipoURL) {
-
-            carta.style.display = "";
-
-        } else {
-
-            carta.style.display = "none";
-
-        }
-
-    });
-
+    if (tipoCarta === tipoURL) {
+      carta.style.display = "";
+    } else {
+      carta.style.display = "none";
+    }
+  });
 }

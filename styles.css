@@ -1,53 +1,103 @@
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pokebola-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
 * {
-  box-sizing: border-box; /* Evita que los bordes y paddings deformen las cajas */
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #e9ebed;
   margin: 0;
+  background-color: #e9ebed;
   font-family:
     system-ui,
     -apple-system,
-    sans-serif; /* Tipografía más limpia */
+    sans-serif;
 }
 
-header,
-footer {
-  background-color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
+/* Header principal */
 .catalogo-header {
-  text-align: center;
   margin: 0;
-  padding: 2rem;
+  padding: 20px 30px;
   background-color: #fff;
-  border-bottom: 4px solid #0051b3; /* Un toque visual para separar el header */
+  border-bottom: 4px solid #0051b3;
 }
 
+.header-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-tienda {
+  text-align: left;
+}
+
+.logo-tienda h1 {
+  margin: 0;
+  color: #0051b3;
+  font-size: 2rem;
+}
+
+.logo-tienda p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: #0070f3;
+}
+
+/* Contenido principal */
 .catalogo {
-  max-width: 1200px; /* Centra el contenido en pantallas grandes */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 .seccion-cartas h2 {
-  color: #575881; /* Contraste contra el fondo Blanco */
+  color: #575881;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
 }
 
-/* El grid se aplica al contenedor de los productos, NO al catálogo completo */
+/* Carrusel del inicio */
 .grilla-productos {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 220px;
   gap: 1.5rem;
   overflow-x: auto;
-  padding-bottom: 1rem; /* Espacio para que el scrollbar no tape las cartas */
+  padding-bottom: 1rem;
 }
 
+/* Tarjetas de productos */
 .card {
   border: 1px solid #e5e5e5;
   border-radius: 8px;
@@ -69,14 +119,14 @@ footer {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #f9f9f9; /* Fondo claro por si la imagen tiene transparencias */
+  background-color: #f9f9f9;
 }
 
 .card-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 0.5rem; /* Pequeño respiro interno para la imagen */
+  padding: 0.5rem;
 }
 
 .badge {
@@ -100,7 +150,7 @@ footer {
 
 .card-title {
   font-size: 0.95rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
   color: #333;
 }
 
@@ -108,7 +158,7 @@ footer {
   font-size: 1.1rem;
   font-weight: bold;
   color: #111;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
 }
 
 .old-price {
@@ -134,27 +184,7 @@ footer {
   background-color: #0051b3;
 }
 
-/* MENU */
-
-.menu {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.menu a {
-  color: rgb(53, 51, 51);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.menu a:hover {
-  color: #ffcb05;
-}
-
-/* BUSCADOR */
-
+/* Buscador */
 .buscador {
   display: flex;
   justify-content: center;
@@ -180,9 +210,10 @@ footer {
 }
 
 .buscador button:hover {
-  background-color: #0070f3;
+  background-color: #0051b3;
 }
 
+/* Categorias */
 .categorias {
   text-align: center;
   margin: 30px 0;
@@ -212,21 +243,23 @@ footer {
 .lista-categorias button:hover {
   background-color: #0059c7;
 }
-/*
-    CARRITO
-*/
+
+/* Boton carrito */
 .cart-btn {
   position: relative;
-  background: #e53935;
+  background-color: #0070f3;
   color: #fff;
   border: none;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 10px 18px;
-  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  letter-spacing: 0.3px;
-  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.cart-btn:hover {
+  background-color: #0051b3;
 }
 
 .cart-count {
@@ -235,7 +268,6 @@ footer {
   right: -8px;
   background: #0051b3;
   color: #fff;
-  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 700;
   width: 20px;
@@ -246,10 +278,7 @@ footer {
   justify-content: center;
 }
 
-/*
-    SECCION CARRITO (Se muestra al hacer click en el carrito)
-*/
-
+/* Carrito lateral */
 .drawer {
   position: fixed;
   top: 0;
@@ -386,6 +415,7 @@ footer {
   cursor: pointer;
 }
 
+/* Secciones nosotros y contacto */
 .info-seccion {
   padding: 60px 20px;
   text-align: center;
@@ -404,81 +434,88 @@ footer {
   margin: 10px;
 }
 
-.cartas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.carta {
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s;
-}
-
-.carta:hover {
-  transform: translateY(-5px);
-}
-
-.carta img {
-  width: 100%;
-  max-width: 180px;
-}
-
-.carta h3 {
-  margin: 10px 0;
-}
-
-.carta p {
-  font-size: 20px;
-  font-weight: bold;
-  color: #e63946;
-}
-
-.carta button {
-  background: #ffcb05;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.carta button:hover {
-  background: #f5b800;
-}
-
-/* Cuadrícula para la página de cartas */
+/* Pagina de todas las cartas */
 .pagina-cartas {
   display: grid;
-
-  /* Cancela el comportamiento de carrusel */
   grid-auto-flow: row;
   grid-auto-columns: auto;
   overflow-x: visible;
-
-  /* 4 cartas por fila */
   grid-template-columns: repeat(4, 1fr);
-
   gap: 20px;
 }
 
-/* Tablets */
+/* Boton ver todas las cartas */
+.ver-mas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.ver-mas a {
+  display: inline-block;
+  background-color: #0070f3;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ver-mas a:hover {
+  background-color: #0051b3;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Ajustes para tablet */
 @media (max-width: 900px) {
   .pagina-cartas {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Celulares */
+/* Ajustes del header en pantallas pequeñas */
+@media (max-width: 750px) {
+  .header-contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-tienda {
+    text-align: center;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* Ajustes para celular */
 @media (max-width: 600px) {
   .pagina-cartas {
     grid-template-columns: 1fr;
+  }
+
+  .buscador {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buscador input {
+    width: 100%;
+    max-width: 350px;
   }
 }
