@@ -50,3 +50,28 @@ function buscarCarta() {
 botonBuscar.addEventListener("click", buscarCarta);
 
 inputBuscar.addEventListener("input", buscarCarta);
+
+//Filtro para inicio
+const parametrosURL = new URLSearchParams(window.location.search);
+
+const tipoURL = parametrosURL.get("tipo");
+
+if (tipoURL) {
+
+    cartas.forEach((carta) => {
+
+        const tipoCarta = carta.dataset.tipo;
+
+        if (tipoCarta === tipoURL) {
+
+            carta.style.display = "";
+
+        } else {
+
+            carta.style.display = "none";
+
+        }
+
+    });
+
+}

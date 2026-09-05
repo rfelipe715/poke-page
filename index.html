@@ -44,18 +44,35 @@
         <!-- Seccion Carro (oculto por defecto) -->
       </nav>
     </header>
-    <section class="categorias">
-      <h2>Categorías</h2>
+<section class="categorias">
+    <h2>Encuentra tus cartas por categoría</h2>
 
-      <div class="lista-categorias">
-        <button data-categoria="todos">⭐ Todos</button>
-        <button data-categoria="fuego">🔥 Fuego</button>
-        <button data-categoria="agua">💧 Agua</button>
-        <button data-categoria="planta">🌿 Planta</button>
-        <button data-categoria="electrico">⚡ Eléctrico</button>
-        <button data-categoria="psiquico">🔮 Psíquico</button>
-      </div>
-    </section>
+    <div class="lista-categorias">
+        <button onclick="window.location.href='cartas.html'">
+            ⭐ Todas
+        </button>
+
+        <button onclick="window.location.href='cartas.html?tipo=fuego'">
+            🔥 Fuego
+        </button>
+
+        <button onclick="window.location.href='cartas.html?tipo=agua'">
+            💧 Agua
+        </button>
+
+        <button onclick="window.location.href='cartas.html?tipo=planta'">
+            🌿 Planta
+        </button>
+
+        <button onclick="window.location.href='cartas.html?tipo=electrico'">
+            ⚡ Eléctrico
+        </button>
+
+        <button onclick="window.location.href='cartas.html?tipo=psiquico'">
+            🔮 Psíquico
+        </button>
+    </div>
+</section>
 
     <main class="catalogo">
       <section class="seccion-cartas" id="cartas">
