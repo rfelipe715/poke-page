@@ -47,6 +47,16 @@ function buscarCarta() {
   });
 }
 
+// ABRIR Y CERRAR CARRITO
+openCartBtn.addEventListener("click", () => {
+  cartDrawer.classList.toggle("open");
+});
+
+closeCartBtn.addEventListener("click", () => {
+  cartDrawer.classList.remove("open");
+});
+
+// EVENTOS DEL BUSCADOR
 botonBuscar.addEventListener("click", buscarCarta);
 
 inputBuscar.addEventListener("input", buscarCarta);
