@@ -4,56 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
+
+    <title>Iniciar sesión | PokeStore</title>
+
     <link rel="stylesheet" href="CSS/inicio-sesion.css">
 </head>
 
 <body>
 
-    <main class="login-container">
-        <h1>USER LOGIN</h1>
+    <main class="login-page">
 
-        <div class="line"></div>
+        <section class="login-card">
 
-        <div class="input-container">
-
-            <div class="icon user-icon">
-                <span></span>
+            <div class="card-decoration">
+                <div class="pokeball">
+                    <span></span>
+                </div>
             </div>
 
-            <input id="input-email" type="email" placeholder="Username">
+            <div class="login-header">
 
-        </div>
+                <h1>PokeStore</h1>
 
-        <div class="input-container">
+                <p>
+                    Inicia sesión para continuar
+                </p>
 
-            <div class="icon lock-icon">
-                <span></span>
             </div>
 
-            <input id="input-password" type="password" placeholder="Password">
+            <form>
 
-        </div>
+                <div class="form-group">
 
-        <div class="input-container">
+                    <label for="input-email">
+                        Correo electrónico
+                    </label>
 
-            <div class="icon login-icon">
-                <span></span>
+                    <input id="input-email" type="email" placeholder="correo@ejemplo.com">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="input-password">
+                        Contraseña
+                    </label>
+
+                    <input id="input-password" type="password" placeholder="Ingresa tu contraseña">
+
+                </div>
+
+                <div class="login-options">
+
+                    <label class="remember">
+                        <input type="checkbox">
+                        Recordarme
+                    </label>
+
+                    <a href="#" class="forgot">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+
+                </div>
+
+                <button id="btn-inicio-sesion" type="button">
+                    INICIAR SESIÓN
+                </button>
+
+            </form>
+
+            <div class="register">
+
+                <p>
+                    ¿No tienes una cuenta?
+                    <a href="#">Regístrate</a>
+                </p>
+
             </div>
 
-            <button id="btn-inicio-sesion" type="button">
-                LOGIN
-            </button>
-
-        </div>
-
-        <a href="#" class="forgot">
-            Forgot password?
-        </a>
+        </section>
 
     </main>
 
-    <script src="js/inicio-sesion.js"></script>
+    <script src="JS/inicio-sesion.js"></script>
 
 </body>
 
