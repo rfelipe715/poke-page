@@ -1,93 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión | PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body>
+    <main class="acceso-page">
+      <a href="index.html" class="acceso-volver">← Volver a la tienda</a>
 
-    <title>Iniciar sesión | PokeStore</title>
+      <section class="acceso-card">
+        <div class="card-decoration">
+          <div class="pokeball"><span></span></div>
+        </div>
 
-    <link rel="stylesheet" href="CSS/inicio-sesion.css">
-</head>
+        <div class="acceso-header">
+          <h1>PokéStore</h1>
+          <p>Inicia sesión para continuar</p>
+        </div>
 
-<body>
+        <p class="mensaje-error" id="mensajeCredenciales"></p>
 
-    <main class="login-page">
-
-        <section class="login-card">
-
-            <div class="card-decoration">
-                <div class="pokeball">
-                    <span></span>
-                </div>
+        <form id="formLogin" novalidate>
+          <div class="form-grid">
+            <div class="campo">
+              <label for="input-email">Correo electrónico</label>
+              <input
+                id="input-email"
+                type="email"
+                placeholder="correo@duoc.cl"
+                maxlength="100"
+              />
+              <span class="mensaje-error" id="error-email"></span>
             </div>
 
-            <div class="login-header">
-
-                <h1>PokeStore</h1>
-
-                <p>
-                    Inicia sesión para continuar
-                </p>
-
+            <div class="campo">
+              <label for="input-password">Contraseña</label>
+              <input
+                id="input-password"
+                type="password"
+                placeholder="Entre 4 y 10 caracteres"
+                maxlength="10"
+              />
+              <span class="mensaje-error" id="error-password"></span>
             </div>
 
-            <form>
+            <div class="acceso-opciones">
+              <label class="remember">
+                <input type="checkbox" />
+                Recordarme
+              </label>
 
-                <div class="form-group">
-
-                    <label for="input-email">
-                        Correo electrónico
-                    </label>
-
-                    <input id="input-email" type="email" placeholder="correo@ejemplo.com">
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="input-password">
-                        Contraseña
-                    </label>
-
-                    <input id="input-password" type="password" placeholder="Ingresa tu contraseña">
-
-                </div>
-
-                <div class="login-options">
-
-                    <label class="remember">
-                        <input type="checkbox">
-                        Recordarme
-                    </label>
-
-                    <a href="#" class="forgot">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-
-                </div>
-
-                <button id="btn-inicio-sesion" type="button">
-                    INICIAR SESIÓN
-                </button>
-
-            </form>
-
-            <div class="register">
-
-                <p>
-                    ¿No tienes una cuenta?
-                    <a href="#">Regístrate</a>
-                </p>
-
+              <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
             </div>
 
-        </section>
+            <button
+              id="btn-inicio-sesion"
+              type="submit"
+              class="btn btn-amarillo btn-ancho"
+            >
+              INICIAR SESIÓN
+            </button>
+          </div>
+        </form>
 
+        <div class="pie-formulario">
+          <p>
+            ¿No tienes una cuenta?
+            <a href="registro.html">Regístrate</a>
+          </p>
+        </div>
+      </section>
     </main>
 
+    <script src="JS/validaciones.js"></script>
     <script src="JS/inicio-sesion.js"></script>
-
-</body>
-
+  </body>
 </html>

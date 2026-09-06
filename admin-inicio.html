@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de administración | PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="admin-topbar">
+      <div class="logo-titulo">
+        <h1>PokéStore</h1>
+        <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+      </div>
+
+      <div class="admin-topbar-derecha">
+        <span class="saludo-usuario" id="adminSaludo"></span>
+        <a href="index.html">Volver a la tienda</a>
+        <button type="button" id="adminCerrarSesion" class="link-boton">
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <nav class="admin-menu">
+        <a href="admin-inicio.html">Inicio</a>
+        <a href="admin-productos.html">Productos</a>
+        <a href="admin-usuarios.html">Usuarios</a>
+      </nav>
+
+      <main class="admin-main">
+        <h1>Panel de administración</h1>
+        <p>Resumen rápido de la tienda.</p>
+
+        <div class="admin-tarjetas">
+          <div class="admin-tarjeta">
+            <span>Productos publicados</span>
+            <strong id="totalProductos">0</strong>
+          </div>
+
+          <div class="admin-tarjeta">
+            <span>Con stock crítico</span>
+            <strong id="totalStockCritico">0</strong>
+          </div>
+
+          <div class="admin-tarjeta">
+            <span>Usuarios registrados</span>
+            <strong id="totalUsuarios">0</strong>
+          </div>
+        </div>
+
+        <div class="admin-top-acciones">
+          <a href="admin-productos.html" class="btn btn-primario">
+            Ir a Productos
+          </a>
+          <a href="admin-usuarios.html" class="btn btn-secundario">
+            Ir a Usuarios
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <script src="JS/productos.js"></script>
+    <script src="JS/admin-datos.js"></script>
+    <script src="JS/admin.js"></script>
+    <script src="JS/admin-inicio.js"></script>
+  </body>
+</html>

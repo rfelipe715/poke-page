@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartas Pokémon | PokéStore</title>
+    <title>Detalle de carta | PokéStore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -66,43 +66,49 @@
       </aside>
     </header>
 
-    <section class="categorias">
-      <h2>Categorías</h2>
+    <p class="migas" id="migas">
+      <a href="index.html">Inicio</a> ›
+      <a href="cartas.html">Cartas</a> ›
+      <span id="migaNombre">Detalle</span>
+    </p>
 
-      <ul class="lista-categorias">
-        <li><button data-categoria="todos" type="button">⭐ Todos</button></li>
-        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
-        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
-        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
-        <li>
-          <button data-categoria="electrico" type="button">
-            ⚡ Eléctrico
-          </button>
-        </li>
-        <li>
-          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
-        </li>
-        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
-        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
-      </ul>
-    </section>
-
-    <main class="catalogo">
-      <section class="seccion-cartas">
-        <div class="buscador">
-          <label for="buscarCarta" class="visually-hidden">
-            Buscar carta Pokémon
-          </label>
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
-
-          <button id="botonBuscar" type="button">Buscar</button>
+    <main class="detalle-wrap" id="detalleWrap">
+      <div class="detalle-grid">
+        <div class="detalle-imagen">
+          <img id="detalleImagen" src="" alt="" />
         </div>
 
-        <div class="grilla-productos pagina-cartas" id="grillaCartas"></div>
+        <div class="detalle-info">
+          <span class="detalle-tipo" id="detalleTipo"></span>
+          <h1 id="detalleNombre"></h1>
+
+          <p class="detalle-precio" id="detallePrecio"></p>
+
+          <p class="detalle-descripcion" id="detalleDescripcion"></p>
+
+          <p class="detalle-stock" id="detalleStock"></p>
+
+          <div class="selector-cantidad">
+            <button class="qty-btn" id="restarCantidad" type="button">
+              −
+            </button>
+            <span id="cantidadValor">1</span>
+            <button class="qty-btn" id="sumarCantidad" type="button">+</button>
+          </div>
+
+          <button
+            class="btn btn-primario"
+            id="detalleAgregar"
+            type="button"
+          >
+            Agregar al carro
+          </button>
+        </div>
+      </div>
+
+      <section class="relacionados">
+        <h2>Cartas relacionadas</h2>
+        <div class="grilla-productos" id="relacionadosGrid"></div>
       </section>
     </main>
 
@@ -169,6 +175,6 @@
     <script src="JS/carrito.js"></script>
     <script src="JS/cuenta.js"></script>
     <script src="JS/newsletter.js"></script>
-    <script src="JS/js.js"></script>
+    <script src="JS/detalle.js"></script>
   </body>
 </html>

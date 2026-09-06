@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokeStore</title>
+    <title>PokéStore | Cartas Pokémon para coleccionistas</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -22,20 +22,23 @@
         <nav class="menu">
           <a href="index.html">Inicio</a>
           <a href="cartas.html">Cartas</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#contacto">Contacto</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contacto.html">Contacto</a>
 
-          <button class="cart-btn" id="openCart">
+          <button class="cart-btn" id="openCart" type="button">
             Carrito 🛒
             <span class="cart-count" id="cartCount">0</span>
           </button>
+
+          <div class="cuenta-nav" id="cuentaNav"></div>
         </nav>
       </div>
 
       <aside class="drawer" id="drawer">
         <div class="drawer-head">
           <h3>Tu carrito</h3>
-          <button class="drawer-close" id="closeCart">×</button>
+          <button class="drawer-close" id="closeCart" type="button">×</button>
         </div>
 
         <div class="drawer-items" id="drawerItems">
@@ -51,7 +54,12 @@
             <span id="drawerTotal">$0</span>
           </div>
 
-          <button class="checkout-btn" id="checkoutBtn" disabled>
+          <button
+            class="btn btn-amarillo btn-ancho"
+            id="checkoutBtn"
+            type="button"
+            disabled
+          >
             Confirmar pedido
           </button>
         </div>
@@ -61,218 +69,119 @@
     <section class="categorias">
       <h2>Encuentra tus cartas por categoría</h2>
 
-      <div class="lista-categorias">
-        <button onclick="window.location.href = 'cartas.html'">⭐ Todas</button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=fuego'">
-          🔥 Fuego
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=agua'">
-          💧 Agua
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=planta'">
-          🌿 Planta
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=electrico'">
-          ⚡ Eléctrico
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=psiquico'">
-          🔮 Psíquico
-        </button>
-      </div>
+      <ul class="lista-categorias categorias-inicio">
+        <li><button data-categoria="todos" type="button">⭐ Todas</button></li>
+        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
+        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
+        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
+        <li>
+          <button data-categoria="electrico" type="button">
+            ⚡ Eléctrico
+          </button>
+        </li>
+        <li>
+          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
+        </li>
+        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
+        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
+      </ul>
     </section>
 
     <main class="catalogo">
-      <section class="seccion-cartas" id="cartas">
-        <div class="buscador">
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
-
-          <button>Buscar</button>
-        </div>
-
+      <section class="seccion-cartas">
         <h2>Cartas Destacadas</h2>
 
-        <div class="grilla-productos">
-          <!-- Venusaur -->
-          <article class="card" data-tipo="planta">
-            <div class="card-img">
-              <img
-                src="https://dz3we2x72f7ol.cloudfront.net/expansions/mega-evolution/es-es/JL2G_ES_3.png"
-                alt="Venusaur"
-              />
-              <span class="badge">-20% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Venusaur</h3>
-
-              <p class="card-price">
-                <span class="old-price">$55.990</span>
-                $44.792
-              </p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Dragonite -->
-          <article class="card" data-tipo="normal">
-            <div class="card-img">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qd-LVsziDa-_FbQpZEJ0B1Ez1lSlRmmbX3BPHohdiQ&s"
-                alt="Dragonite"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Dragonite</h3>
-
-              <p class="card-price">
-                <span class="old-price">$65.990</span>
-                $56.091
-              </p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Charizard -->
-          <article class="card" data-tipo="fuego">
-            <div class="card-img">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLwVAaOqd5CvoYBuXRWfIB3sbNTsBDG0AseNpxnp5-A&s=10"
-                alt="Charizard"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Charizard</h3>
-
-              <p class="card-price">$65.990</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Pikachu -->
-          <article class="card" data-tipo="electrico">
-            <div class="card-img">
-              <img
-                src="https://dz3we2x72f7ol.cloudfront.net/expansions/30th-celebration/es-mx/2M6P_LA_23.png"
-                alt="Pikachu"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Pikachu</h3>
-
-              <p class="card-price">$65.990</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Mewtwo -->
-          <article class="card" data-tipo="psiquico">
-            <div class="card-img">
-              <img
-                src="https://images.pokemontcg.io/base1/10.png"
-                alt="Mewtwo"
-              />
-              <span class="badge">-20% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Mewtwo</h3>
-
-              <p class="card-price">$30.000</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Blastoise -->
-          <article class="card" data-tipo="agua">
-            <div class="card-img">
-              <img
-                src="https://images.pokemontcg.io/base1/2.png"
-                alt="Blastoise"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Blastoise</h3>
-
-              <p class="card-price">$35.000</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Raichu -->
-          <article class="card" data-tipo="electrico">
-            <div class="card-img">
-              <img
-                src="https://images.pokemontcg.io/base1/14.png"
-                alt="Raichu"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Raichu</h3>
-
-              <p class="card-price">$18.000</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-        </div>
+        <div class="grilla-productos" id="grillaDestacadas"></div>
       </section>
     </main>
 
     <div class="ver-mas">
-      <a href="cartas.html">Ver todas las cartas</a>
+      <a href="cartas.html" class="btn btn-primario">Ver todas las cartas</a>
     </div>
 
-    <!-- Nosotros -->
-    <section id="nosotros" class="info-seccion">
-      <h2>Nosotros</h2>
+    <section class="ventajas">
+      <div class="ventaja-item">
+        <div class="icono">🚚</div>
+        <h3>Despacho a todo Chile</h3>
+        <p>Recibe tus cartas en la puerta de tu casa, protegidas en funda rígida.</p>
+      </div>
 
-      <p>
-        Somos una tienda dedicada a la venta y colección de cartas Pokémon.
-        Nuestro objetivo es ofrecer cartas para todos los fanáticos y
-        coleccionistas.
-      </p>
-    </section>
+      <div class="ventaja-item">
+        <div class="icono">✅</div>
+        <h3>Cartas originales</h3>
+        <p>Todas nuestras cartas son verificadas antes de publicarse en la tienda.</p>
+      </div>
 
-    <!-- Contacto -->
-    <section id="contacto" class="info-seccion">
-      <h2>Contacto</h2>
-
-      <p>¿Tienes alguna pregunta? Contáctanos.</p>
-      <p>📧 Email: pokestore@gmail.com</p>
-      <p>📱 Teléfono: +56 9 1234 5678</p>
+      <div class="ventaja-item">
+        <div class="icono">💬</div>
+        <h3>Atención personalizada</h3>
+        <p>¿Dudas sobre una carta? Escríbenos desde la página de contacto.</p>
+      </div>
     </section>
 
     <footer>
-      <h3>PokéStore</h3>
-      <p>Tu tienda de cartas Pokémon</p>
-      <p>© 2026 PokéStore - Todos los derechos reservados</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>PokéStore</h4>
+          <p>
+            Tu tienda de cartas Pokémon para coleccionistas: cartas
+            originales, buen precio y despacho a todo Chile.
+          </p>
+          <div class="footer-social">
+            <span title="Instagram">📷</span>
+            <span title="Facebook">📘</span>
+            <span title="X">✖️</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <a href="cartas.html?tipo=fuego">Fuego</a>
+          <a href="cartas.html?tipo=agua">Agua</a>
+          <a href="cartas.html?tipo=planta">Planta</a>
+          <a href="cartas.html?tipo=electrico">Eléctrico</a>
+          <a href="cartas.html?tipo=psiquico">Psíquico</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ayuda</h4>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="login.html">Iniciar sesión</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Entérate de nuevas cartas y ofertas.</p>
+
+          <form class="footer-newsletter" id="formNewsletter">
+            <label for="inputNewsletter" class="visually-hidden">
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              id="inputNewsletter"
+              placeholder="tu@correo.com"
+              required
+            />
+            <button type="submit">Unirme</button>
+          </form>
+
+          <p class="footer-mensaje" id="mensajeNewsletter"></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 PokéStore - Todos los derechos reservados
+      </div>
     </footer>
 
+    <script src="JS/productos.js"></script>
+    <script src="JS/tarjetas.js"></script>
+    <script src="JS/carrito.js"></script>
+    <script src="JS/cuenta.js"></script>
+    <script src="JS/newsletter.js"></script>
     <script src="JS/js.js"></script>
   </body>
 </html>

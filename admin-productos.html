@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos | Panel PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="admin-topbar">
+      <div class="logo-titulo">
+        <h1>PokéStore</h1>
+        <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+      </div>
+
+      <div class="admin-topbar-derecha">
+        <span class="saludo-usuario" id="adminSaludo"></span>
+        <a href="index.html">Volver a la tienda</a>
+        <button type="button" id="adminCerrarSesion" class="link-boton">
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <nav class="admin-menu">
+        <a href="admin-inicio.html">Inicio</a>
+        <a href="admin-productos.html">Productos</a>
+        <a href="admin-usuarios.html">Usuarios</a>
+      </nav>
+
+      <main class="admin-main">
+        <div class="admin-top-acciones">
+          <h1>Productos</h1>
+          <a href="admin-producto-form.html" class="btn btn-primario">
+            + Nuevo producto
+          </a>
+        </div>
+
+        <div class="admin-tabla-wrap">
+          <table class="admin-tabla">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaProductos"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script src="JS/productos.js"></script>
+    <script src="JS/admin-datos.js"></script>
+    <script src="JS/admin.js"></script>
+    <script src="JS/admin-productos.js"></script>
+  </body>
+</html>

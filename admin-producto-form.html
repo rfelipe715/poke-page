@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo producto | Panel PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="admin-topbar">
+      <div class="logo-titulo">
+        <h1>PokéStore</h1>
+        <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+      </div>
+
+      <div class="admin-topbar-derecha">
+        <span class="saludo-usuario" id="adminSaludo"></span>
+        <a href="index.html">Volver a la tienda</a>
+        <button type="button" id="adminCerrarSesion" class="link-boton">
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <nav class="admin-menu">
+        <a href="admin-inicio.html">Inicio</a>
+        <a href="admin-productos.html">Productos</a>
+        <a href="admin-usuarios.html">Usuarios</a>
+      </nav>
+
+      <main class="admin-main">
+        <h1 id="tituloFormularioProducto">Nuevo producto</h1>
+
+        <div class="form-card">
+          <form id="formProducto" novalidate>
+            <div class="form-grid">
+              <div class="form-grid dos-columnas">
+                <div class="campo">
+                  <label for="prod-codigo">Código</label>
+                  <input id="prod-codigo" type="text" />
+                  <span class="mensaje-error" id="error-prod-codigo"></span>
+                </div>
+
+                <div class="campo">
+                  <label for="prod-categoria">Categoría</label>
+                  <select id="prod-categoria">
+                    <option value="">Selecciona una categoría</option>
+                    <option value="fuego">Fuego</option>
+                    <option value="agua">Agua</option>
+                    <option value="planta">Planta</option>
+                    <option value="electrico">Eléctrico</option>
+                    <option value="psiquico">Psíquico</option>
+                    <option value="normal">Normal</option>
+                    <option value="lucha">Lucha</option>
+                  </select>
+                  <span class="mensaje-error" id="error-prod-categoria"></span>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label for="prod-nombre">Nombre</label>
+                <input id="prod-nombre" type="text" maxlength="100" />
+                <span class="mensaje-error" id="error-prod-nombre"></span>
+              </div>
+
+              <div class="campo">
+                <label for="prod-descripcion">
+                  Descripción <span class="opcional">(opcional)</span>
+                </label>
+                <textarea id="prod-descripcion" maxlength="500" rows="3"></textarea>
+                <span class="mensaje-error" id="error-prod-descripcion"></span>
+              </div>
+
+              <div class="form-grid dos-columnas">
+                <div class="campo">
+                  <label for="prod-precio">Precio</label>
+                  <input id="prod-precio" type="number" min="0" step="0.01" />
+                  <span class="mensaje-error" id="error-prod-precio"></span>
+                </div>
+
+                <div class="campo">
+                  <label for="prod-precio-anterior">
+                    Precio anterior <span class="opcional">(opcional, para mostrar oferta)</span>
+                  </label>
+                  <input id="prod-precio-anterior" type="number" min="0" step="0.01" />
+                  <span class="mensaje-error" id="error-prod-precio-anterior"></span>
+                </div>
+              </div>
+
+              <div class="form-grid dos-columnas">
+                <div class="campo">
+                  <label for="prod-stock">Stock</label>
+                  <input id="prod-stock" type="number" min="0" step="1" />
+                  <span class="mensaje-error" id="error-prod-stock"></span>
+                </div>
+
+                <div class="campo">
+                  <label for="prod-stock-critico">
+                    Stock crítico <span class="opcional">(opcional)</span>
+                  </label>
+                  <input id="prod-stock-critico" type="number" min="0" step="1" />
+                  <span class="mensaje-error" id="error-prod-stock-critico"></span>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label for="prod-imagen">
+                  URL de la imagen <span class="opcional">(opcional)</span>
+                </label>
+                <input id="prod-imagen" type="text" />
+                <span class="mensaje-error" id="error-prod-imagen"></span>
+              </div>
+
+              <div class="campo">
+                <label>
+                  <input type="checkbox" id="prod-destacada" />
+                  Mostrar en "Cartas destacadas" del inicio
+                </label>
+              </div>
+
+              <div class="form-acciones">
+                <button type="submit" class="btn btn-primario">Guardar producto</button>
+                <a href="admin-productos.html" class="btn btn-secundario">Cancelar</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="JS/productos.js"></script>
+    <script src="JS/admin-datos.js"></script>
+    <script src="JS/admin.js"></script>
+    <script src="JS/validaciones.js"></script>
+    <script src="JS/admin-producto-form.js"></script>
+  </body>
+</html>

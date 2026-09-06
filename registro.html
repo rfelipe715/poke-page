@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear cuenta | PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main class="acceso-page">
+      <a href="index.html" class="acceso-volver">← Volver a la tienda</a>
+
+      <section class="acceso-card acceso-card-ancha">
+        <div class="card-decoration">
+          <div class="pokeball"><span></span></div>
+        </div>
+
+        <div class="acceso-header">
+          <h1>Crear cuenta</h1>
+          <p>Regístrate para comprar y seguir tus pedidos</p>
+        </div>
+
+        <p class="mensaje-exito" id="mensajeExito">
+          ¡Cuenta creada! Ya puedes
+          <a href="login.html">iniciar sesión</a>.
+        </p>
+
+        <form id="formRegistro" novalidate>
+          <div class="form-grid">
+            <div class="campo">
+              <label for="reg-nombre">Nombre completo</label>
+              <input id="reg-nombre" type="text" maxlength="100" />
+              <span class="mensaje-error" id="error-reg-nombre"></span>
+            </div>
+
+            <div class="campo">
+              <label for="reg-correo">Correo electrónico</label>
+              <input
+                id="reg-correo"
+                type="email"
+                placeholder="tunombre@duoc.cl"
+                maxlength="100"
+              />
+              <span class="mensaje-error" id="error-reg-correo"></span>
+            </div>
+
+            <div class="campo">
+              <label for="reg-correo-confirmar">Confirmar correo</label>
+              <input id="reg-correo-confirmar" type="email" maxlength="100" />
+              <span class="mensaje-error" id="error-reg-correo-confirmar"></span>
+            </div>
+
+            <div class="campo">
+              <label for="reg-clave">Contraseña</label>
+              <input
+                id="reg-clave"
+                type="password"
+                placeholder="Entre 4 y 10 caracteres"
+                maxlength="10"
+              />
+              <span class="mensaje-error" id="error-reg-clave"></span>
+            </div>
+
+            <div class="campo">
+              <label for="reg-clave-confirmar">Confirmar contraseña</label>
+              <input id="reg-clave-confirmar" type="password" maxlength="10" />
+              <span class="mensaje-error" id="error-reg-clave-confirmar"></span>
+            </div>
+
+            <div class="form-grid dos-columnas">
+              <div class="campo">
+                <label for="reg-region">Región</label>
+                <select id="reg-region"></select>
+                <span class="mensaje-error" id="error-reg-region"></span>
+              </div>
+
+              <div class="campo">
+                <label for="reg-comuna">Comuna</label>
+                <select id="reg-comuna"></select>
+                <span class="mensaje-error" id="error-reg-comuna"></span>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="reg-direccion">Dirección</label>
+              <input id="reg-direccion" type="text" maxlength="300" />
+              <span class="mensaje-error" id="error-reg-direccion"></span>
+            </div>
+
+            <button
+              id="btn-registro"
+              type="submit"
+              class="btn btn-amarillo btn-ancho"
+            >
+              CREAR CUENTA
+            </button>
+          </div>
+        </form>
+
+        <div class="pie-formulario">
+          <p>
+            ¿Ya tienes una cuenta?
+            <a href="login.html">Inicia sesión</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="JS/validaciones.js"></script>
+    <script src="JS/regiones.js"></script>
+    <script src="JS/registro.js"></script>
+  </body>
+</html>

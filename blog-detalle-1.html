@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartas Pokémon | PokéStore</title>
+    <title>Cartas originales vs. falsificadas | PokéStore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -66,44 +66,64 @@
       </aside>
     </header>
 
-    <section class="categorias">
-      <h2>Categorías</h2>
+    <p class="migas">
+      <a href="index.html">Inicio</a> ›
+      <a href="blogs.html">Blog</a> ›
+      <span>Cartas originales vs. falsificadas</span>
+    </p>
 
-      <ul class="lista-categorias">
-        <li><button data-categoria="todos" type="button">⭐ Todos</button></li>
-        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
-        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
-        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
-        <li>
-          <button data-categoria="electrico" type="button">
-            ⚡ Eléctrico
-          </button>
-        </li>
-        <li>
-          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
-        </li>
-        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
-        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
-      </ul>
-    </section>
+    <main class="blog-detalle-wrap">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+        alt="Charizard"
+      />
 
-    <main class="catalogo">
-      <section class="seccion-cartas">
-        <div class="buscador">
-          <label for="buscarCarta" class="visually-hidden">
-            Buscar carta Pokémon
-          </label>
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
+      <article>
+        <h1>Cómo distinguir una carta original de una falsificación</h1>
 
-          <button id="botonBuscar" type="button">Buscar</button>
-        </div>
+        <p>
+          Charizard, Pikachu y Mewtwo están entre las cartas más falsificadas
+          del mercado, justamente porque son las más buscadas. Antes de
+          publicar cualquier carta en PokéStore, revisamos estos cinco
+          puntos:
+        </p>
 
-        <div class="grilla-productos pagina-cartas" id="grillaCartas"></div>
-      </section>
+        <p>
+          <strong>1. El grosor y la textura.</strong> Las cartas oficiales
+          tienen una capa negra en el centro que las hace opacas frente a una
+          luz. Si al iluminarla por detrás se ve la luz pasar con claridad,
+          desconfía.
+        </p>
+
+        <p>
+          <strong>2. La tipografía.</strong> El nombre del Pokémon y el texto
+          de ataques usan siempre la misma fuente oficial. Letras
+          deformadas, mal alineadas o con un tamaño distinto al resto de la
+          carta son una señal de alerta.
+        </p>
+
+        <p>
+          <strong>3. Los colores del reverso.</strong> El azul del reverso de
+          una carta original es siempre el mismo tono. Reversos demasiado
+          claros, oscuros o con manchas suelen indicar una impresión de mala
+          calidad.
+        </p>
+
+        <p>
+          <strong>4. El sonido al doblar.</strong> Sin dañar la carta,
+          doblarla levemente entre los dedos: una carta original es rígida y
+          hace un sonido seco. Una falsificación suele sonar más "suave" o
+          plástica.
+        </p>
+
+        <p>
+          <strong>5. El vendedor.</strong> Compra siempre en tiendas que
+          muestren fotos reales de la carta y que respondan tus preguntas
+          antes de comprar. En PokéStore puedes escribirnos desde la página
+          de <a href="contacto.html">contacto</a> si tienes dudas sobre
+          alguna carta del catálogo.
+        </p>
+      </article>
     </main>
 
     <footer>
@@ -165,10 +185,8 @@
     </footer>
 
     <script src="JS/productos.js"></script>
-    <script src="JS/tarjetas.js"></script>
     <script src="JS/carrito.js"></script>
     <script src="JS/cuenta.js"></script>
     <script src="JS/newsletter.js"></script>
-    <script src="JS/js.js"></script>
   </body>
 </html>

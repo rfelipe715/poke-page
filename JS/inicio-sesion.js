@@ -1,63 +1,91 @@
-const botonInicioSesion = document.getElementById('btn-inicio-sesion');
+/**
+ * Lógica de inicio de sesión. Los usuarios de prueba están aquí mismo,
+ * ya que el proyecto no tiene un servidor real detrás.
+ */
 
 const usuarios = [
-    {
-        nombre: 'Bryan',
-        email: 'bryan@tienda.cl',
-        password: '1234',
-        rol: 'admin',
-        pagina: 'index.html'
-    },
-    {
-        nombre: 'Ignacio',
-        email: 'ignacio@tienda.cl',
-        password: '1234',
-        rol: 'admin',
-        pagina: 'index.html'
-    },
-    {
-        nombre: 'Felipe',
-        email: 'felipe@tienda.cl',
-        password: '1234',
-        rol: 'admin',
-        pagina: 'index.html'
-    }
+  {
+    nombre: "Bryan",
+    correo: "bryan@duoc.cl",
+    clave: "1234",
+    rol: "administrador",
+  },
+  {
+    nombre: "Ignacio",
+    correo: "ignacio@duoc.cl",
+    clave: "1234",
+    rol: "administrador",
+  },
+  {
+    nombre: "Felipe",
+    correo: "felipe@duoc.cl",
+    clave: "1234",
+    rol: "administrador",
+  },
+  {
+    nombre: "Valentina",
+    correo: "valentina@profesor.duoc.cl",
+    clave: "1234",
+    rol: "vendedor",
+  },
+  {
+    nombre: "Cliente Demo",
+    correo: "cliente@gmail.com",
+    clave: "1234",
+    rol: "cliente",
+  },
 ];
 
-botonInicioSesion.addEventListener('click', function () {
+const formLogin = document.getElementById("formLogin");
+const campoCorreo = document.getElementById("input-email");
+const campoClave = document.getElementById("input-password");
+const errorCorreo = document.getElementById("error-email");
+const errorClave = document.getElementById("error-password");
+const mensajeCredenciales = document.getElementById("mensajeCredenciales");
 
-    const inputEmail = document.getElementById('input-email');
-    const inputPassword = document.getElementById('input-password');
+// Valida en tiempo real mientras el usuario escribe.
+campoCorreo.addEventListener("input", () => {
+  validarCorreo(campoCorreo, errorCorreo, 100);
+});
 
-    const email = inputEmail.value.trim();
-    const password = inputPassword.value.trim();
+campoClave.addEventListener("input", () => {
+  validarContrasena(campoClave, errorClave);
+});
 
-    if (email === '' || password === '') {
-        alert('Debes ingresar correo y contraseña');
-        return;
-    }
+formLogin.addEventListener("submit", (evento) => {
+  evento.preventDefault();
 
-    const usuarioEncontrado = usuarios.find(function(usuario) {
-        return usuario.email === email &&
-               usuario.password === password;
-    });
+  mensajeCredenciales.classList.remove("visible");
 
-    if (usuarioEncontrado) {
+  const correoValido = validarCorreo(campoCorreo, errorCorreo, 100);
+  const claveValida = validarContrasena(campoClave, errorClave);
 
-        localStorage.setItem('nombre_usuario', usuarioEncontrado.nombre);
-        localStorage.setItem('rol_usuario', usuarioEncontrado.rol);
-        localStorage.setItem('email_usuario', usuarioEncontrado.email);
+  if (!correoValido || !claveValida) {
+    return;
+  }
 
-        alert('Bienvenido ' + usuarioEncontrado.nombre);
+  const correo = campoCorreo.value.trim().toLowerCase();
+  const clave = campoClave.value.trim();
 
-        window.location.href = usuarioEncontrado.pagina;
+  const usuarioEncontrado = usuarios.find(
+    (usuario) => usuario.correo === correo && usuario.clave === clave,
+  );
 
-    } else {
+  if (!usuarioEncontrado) {
+    mensajeCredenciales.textContent = "Correo o contraseña incorrectos.";
+    mensajeCredenciales.classList.add("visible");
+    campoClave.value = "";
+    campoClave.focus();
+    return;
+  }
 
-        alert('Correo o contraseña incorrectos');
+  localStorage.setItem("nombre_usuario", usuarioEncontrado.nombre);
+  localStorage.setItem("rol_usuario", usuarioEncontrado.rol);
+  localStorage.setItem("email_usuario", usuarioEncontrado.correo);
 
-        inputPassword.value = '';
-        inputPassword.focus();
-    }
-
+  if (usuarioEncontrado.rol === "administrador" || usuarioEncontrado.rol === "vendedor") {
+    window.location.href = "admin-inicio.html";
+  } else {
+    window.location.href = "index.html";
+  }
 });

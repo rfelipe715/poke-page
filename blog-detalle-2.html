@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartas Pokémon | PokéStore</title>
+    <title>Cómo cuidar tu colección de cartas | PokéStore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -66,44 +66,59 @@
       </aside>
     </header>
 
-    <section class="categorias">
-      <h2>Categorías</h2>
+    <p class="migas">
+      <a href="index.html">Inicio</a> ›
+      <a href="blogs.html">Blog</a> ›
+      <span>Cómo cuidar tu colección</span>
+    </p>
 
-      <ul class="lista-categorias">
-        <li><button data-categoria="todos" type="button">⭐ Todos</button></li>
-        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
-        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
-        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
-        <li>
-          <button data-categoria="electrico" type="button">
-            ⚡ Eléctrico
-          </button>
-        </li>
-        <li>
-          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
-        </li>
-        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
-        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
-      </ul>
-    </section>
+    <main class="blog-detalle-wrap">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"
+        alt="Lapras"
+      />
 
-    <main class="catalogo">
-      <section class="seccion-cartas">
-        <div class="buscador">
-          <label for="buscarCarta" class="visually-hidden">
-            Buscar carta Pokémon
-          </label>
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
+      <article>
+        <h1>Cómo cuidar y guardar tu colección de cartas</h1>
 
-          <button id="botonBuscar" type="button">Buscar</button>
-        </div>
+        <p>
+          Una carta bien cuidada mantiene su valor por años. Estos son los
+          cuidados básicos que recomendamos a nuestros clientes en
+          PokéStore, sobre todo para las cartas más antiguas o costosas del
+          catálogo.
+        </p>
 
-        <div class="grilla-productos pagina-cartas" id="grillaCartas"></div>
-      </section>
+        <p>
+          <strong>Usa funda individual (sleeve).</strong> Es la primera
+          barrera contra rayones, huellas y humedad. Es barata y protege la
+          carta cada vez que la tomas para mirarla.
+        </p>
+
+        <p>
+          <strong>Guárdalas en carpeta o caja rígida.</strong> Las carpetas
+          con hojas de 9 bolsillos evitan que las cartas se doblen y facilitan
+          mostrar la colección sin sacarlas de su funda.
+        </p>
+
+        <p>
+          <strong>Cuida la humedad y la luz.</strong> La humedad ondula el
+          cartón y la luz solar directa decolora la tinta con el tiempo.
+          Guarda tu colección en un lugar seco, alejado de ventanas.
+        </p>
+
+        <p>
+          <strong>Evita tocar la carta directamente.</strong> La grasa de
+          los dedos deja marcas que no se pueden limpiar sin dañar el
+          acabado. Tómalas siempre por los bordes.
+        </p>
+
+        <p>
+          <strong>Revisa antes de comprar de segunda mano.</strong> Si compras
+          cartas usadas fuera de PokéStore, revisa las esquinas y la
+          superficie con buena luz antes de pagar. Cualquier duda, siempre
+          puedes escribirnos desde <a href="contacto.html">contacto</a>.
+        </p>
+      </article>
     </main>
 
     <footer>
@@ -165,10 +180,8 @@
     </footer>
 
     <script src="JS/productos.js"></script>
-    <script src="JS/tarjetas.js"></script>
     <script src="JS/carrito.js"></script>
     <script src="JS/cuenta.js"></script>
     <script src="JS/newsletter.js"></script>
-    <script src="JS/js.js"></script>
   </body>
 </html>

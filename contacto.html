@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartas Pokémon | PokéStore</title>
+    <title>Contacto | PokéStore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -66,44 +66,78 @@
       </aside>
     </header>
 
-    <section class="categorias">
-      <h2>Categorías</h2>
+    <main class="contacto-wrap">
+      <div class="contacto-info">
+        <h1>Contacto</h1>
+        <p>¿Tienes alguna pregunta sobre una carta o un pedido? Escríbenos.</p>
 
-      <ul class="lista-categorias">
-        <li><button data-categoria="todos" type="button">⭐ Todos</button></li>
-        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
-        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
-        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
-        <li>
-          <button data-categoria="electrico" type="button">
-            ⚡ Eléctrico
-          </button>
-        </li>
-        <li>
-          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
-        </li>
-        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
-        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
-      </ul>
-    </section>
-
-    <main class="catalogo">
-      <section class="seccion-cartas">
-        <div class="buscador">
-          <label for="buscarCarta" class="visually-hidden">
-            Buscar carta Pokémon
-          </label>
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
-
-          <button id="botonBuscar" type="button">Buscar</button>
+        <div class="contacto-dato">
+          <span>📧</span>
+          <div>
+            <strong>Correo</strong>
+            pokestore@gmail.com
+          </div>
         </div>
 
-        <div class="grilla-productos pagina-cartas" id="grillaCartas"></div>
-      </section>
+        <div class="contacto-dato">
+          <span>📱</span>
+          <div>
+            <strong>Teléfono</strong>
+            +56 9 1234 5678
+          </div>
+        </div>
+
+        <div class="contacto-dato">
+          <span>🕒</span>
+          <div>
+            <strong>Horario de atención</strong>
+            Lunes a viernes, 9:00 a 18:00
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Envíanos un mensaje</h2>
+
+        <p class="mensaje-exito" id="mensajeExitoContacto">
+          ¡Gracias! Recibimos tu mensaje y te responderemos a la brevedad.
+        </p>
+
+        <form id="formContacto" novalidate>
+          <div class="form-grid">
+            <div class="campo">
+              <label for="contacto-nombre">Nombre</label>
+              <input id="contacto-nombre" type="text" maxlength="100" />
+              <span class="mensaje-error" id="error-contacto-nombre"></span>
+            </div>
+
+            <div class="campo">
+              <label for="contacto-correo">Correo electrónico</label>
+              <input
+                id="contacto-correo"
+                type="email"
+                placeholder="tunombre@duoc.cl"
+                maxlength="100"
+              />
+              <span class="mensaje-error" id="error-contacto-correo"></span>
+            </div>
+
+            <div class="campo">
+              <label for="contacto-comentario">Comentario</label>
+              <textarea
+                id="contacto-comentario"
+                maxlength="500"
+                rows="5"
+              ></textarea>
+              <span class="mensaje-error" id="error-contacto-comentario"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primario">
+              Enviar mensaje
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <footer>
@@ -165,10 +199,10 @@
     </footer>
 
     <script src="JS/productos.js"></script>
-    <script src="JS/tarjetas.js"></script>
     <script src="JS/carrito.js"></script>
     <script src="JS/cuenta.js"></script>
     <script src="JS/newsletter.js"></script>
-    <script src="JS/js.js"></script>
+    <script src="JS/validaciones.js"></script>
+    <script src="JS/contacto.js"></script>
   </body>
 </html>

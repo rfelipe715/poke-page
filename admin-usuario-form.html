@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo usuario | Panel PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="admin-topbar">
+      <div class="logo-titulo">
+        <h1>PokéStore</h1>
+        <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+      </div>
+
+      <div class="admin-topbar-derecha">
+        <span class="saludo-usuario" id="adminSaludo"></span>
+        <a href="index.html">Volver a la tienda</a>
+        <button type="button" id="adminCerrarSesion" class="link-boton">
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <nav class="admin-menu">
+        <a href="admin-inicio.html">Inicio</a>
+        <a href="admin-productos.html">Productos</a>
+        <a href="admin-usuarios.html">Usuarios</a>
+      </nav>
+
+      <main class="admin-main">
+        <h1 id="tituloFormularioUsuario">Nuevo usuario</h1>
+
+        <div class="form-card">
+          <form id="formUsuarioAdmin" novalidate>
+            <div class="form-grid">
+              <div class="form-grid dos-columnas">
+                <div class="campo">
+                  <label for="usr-run">RUN (sin puntos ni guion)</label>
+                  <input id="usr-run" type="text" placeholder="19011022K" />
+                  <span class="mensaje-error" id="error-usr-run"></span>
+                </div>
+
+                <div class="campo">
+                  <label for="usr-tipo">Tipo de usuario</label>
+                  <select id="usr-tipo">
+                    <option value="">Selecciona un tipo</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="cliente">Cliente</option>
+                  </select>
+                  <span class="mensaje-error" id="error-usr-tipo"></span>
+                </div>
+              </div>
+
+              <div class="form-grid dos-columnas">
+                <div class="campo">
+                  <label for="usr-nombre">Nombre</label>
+                  <input id="usr-nombre" type="text" maxlength="50" />
+                  <span class="mensaje-error" id="error-usr-nombre"></span>
+                </div>
+
+                <div class="campo">
+                  <label for="usr-apellidos">Apellidos</label>
+                  <input id="usr-apellidos" type="text" maxlength="100" />
+                  <span class="mensaje-error" id="error-usr-apellidos"></span>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label for="usr-correo">Correo electrónico</label>
+                <input
+                  id="usr-correo"
+                  type="email"
+                  placeholder="usuario@duoc.cl"
+                  maxlength="100"
+                />
+                <span class="mensaje-error" id="error-usr-correo"></span>
+              </div>
+
+              <div class="campo">
+                <label for="usr-nacimiento">
+                  Fecha de nacimiento <span class="opcional">(opcional)</span>
+                </label>
+                <input id="usr-nacimiento" type="date" />
+              </div>
+
+              <div class="form-grid dos-columnas">
+                <div class="campo">
+                  <label for="usr-region">Región</label>
+                  <select id="usr-region"></select>
+                  <span class="mensaje-error" id="error-usr-region"></span>
+                </div>
+
+                <div class="campo">
+                  <label for="usr-comuna">Comuna</label>
+                  <select id="usr-comuna"></select>
+                  <span class="mensaje-error" id="error-usr-comuna"></span>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label for="usr-direccion">Dirección</label>
+                <input id="usr-direccion" type="text" maxlength="300" />
+                <span class="mensaje-error" id="error-usr-direccion"></span>
+              </div>
+
+              <div class="form-acciones">
+                <button type="submit" class="btn btn-primario">Guardar usuario</button>
+                <a href="admin-usuarios.html" class="btn btn-secundario">Cancelar</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="JS/productos.js"></script>
+    <script src="JS/admin-datos.js"></script>
+    <script src="JS/admin.js"></script>
+    <script src="JS/validaciones.js"></script>
+    <script src="JS/regiones.js"></script>
+    <script src="JS/admin-usuario-form.js"></script>
+  </body>
+</html>

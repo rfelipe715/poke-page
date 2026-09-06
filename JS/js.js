@@ -1,79 +1,95 @@
 /**
- * Atributos HTML
+ * Lógica del catálogo: pinta las cartas destacadas del inicio, todas las
+ * cartas de cartas.html, y maneja el buscador y el filtro por categoría.
+ * Usa el arreglo "productos" definido en productos.js.
  */
 
-const openCartBtn = document.getElementById("openCart");
-const closeCartBtn = document.getElementById("closeCart");
-const cartDrawer = document.getElementById("drawer");
+// ---------- CARTAS DESTACADAS (solo existe en index.html) ----------
+const grillaDestacadas = document.getElementById("grillaDestacadas");
 
-// FILTRO POR CATEGORIAS
-const botonesCategorias = document.querySelectorAll(".lista-categorias button");
-const cartas = document.querySelectorAll(".card");
+if (grillaDestacadas) {
+  const destacados = productos.filter((producto) => producto.destacada);
+  renderizarProductos(grillaDestacadas, destacados);
+}
 
-botonesCategorias.forEach((boton) => {
-  boton.addEventListener("click", () => {
-    const categoriaSeleccionada = boton.dataset.categoria;
+// ---------- TODAS LAS CARTAS (solo existe en cartas.html) ----------
+const grillaCartas = document.getElementById("grillaCartas");
 
-    cartas.forEach((carta) => {
-      const tipoCarta = carta.dataset.tipo;
+if (grillaCartas) {
+  renderizarProductos(grillaCartas, productos);
 
-      if (
-        categoriaSeleccionada === "todos" ||
-        tipoCarta === categoriaSeleccionada
-      ) {
-        carta.style.display = "";
+  // Si se llega desde "cartas.html?tipo=fuego", se deja ese filtro activo.
+  const parametrosURL = new URLSearchParams(window.location.search);
+  const tipoURL = parametrosURL.get("tipo");
+
+  if (tipoURL) {
+    const productosFiltrados = productos.filter(
+      (producto) => producto.tipo === tipoURL,
+    );
+    renderizarProductos(grillaCartas, productosFiltrados);
+  }
+
+  // Marca el botón de categoría que corresponde al filtro actual.
+  const botonesCategorias = document.querySelectorAll(".lista-categorias button");
+
+  botonesCategorias.forEach((boton) => {
+    const categoriaDelBoton = tipoURL ? tipoURL : "todos";
+    if (boton.dataset.categoria === categoriaDelBoton) {
+      boton.classList.add("activa");
+    }
+  });
+
+  // Filtro por categoría (clic en los botones de arriba de la grilla).
+  botonesCategorias.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const categoriaSeleccionada = boton.dataset.categoria;
+
+      botonesCategorias.forEach((otroBoton) => {
+        otroBoton.classList.remove("activa");
+      });
+      boton.classList.add("activa");
+
+      if (categoriaSeleccionada === "todos") {
+        renderizarProductos(grillaCartas, productos);
       } else {
-        carta.style.display = "none";
+        const productosFiltrados = productos.filter(
+          (producto) => producto.tipo === categoriaSeleccionada,
+        );
+        renderizarProductos(grillaCartas, productosFiltrados);
       }
     });
   });
-});
 
-// BUSCADOR
-const inputBuscar = document.getElementById("buscarCarta");
-const botonBuscar = document.querySelector(".buscador button");
+  // Buscador por nombre.
+  const inputBuscar = document.getElementById("buscarCarta");
+  const botonBuscar = document.getElementById("botonBuscar");
 
-function buscarCarta() {
-  const texto = inputBuscar.value.toLowerCase().trim();
+  function buscarCarta() {
+    const texto = inputBuscar.value.toLowerCase().trim();
+    const productosFiltrados = productos.filter((producto) =>
+      producto.nombre.toLowerCase().includes(texto),
+    );
+    renderizarProductos(grillaCartas, productosFiltrados);
+  }
 
-  cartas.forEach((carta) => {
-    const nombre = carta.querySelector(".card-title").textContent.toLowerCase();
-
-    if (nombre.includes(texto)) {
-      carta.style.display = "";
-    } else {
-      carta.style.display = "none";
-    }
-  });
+  botonBuscar.addEventListener("click", buscarCarta);
+  inputBuscar.addEventListener("input", buscarCarta);
 }
 
-// ABRIR Y CERRAR CARRITO
-openCartBtn.addEventListener("click", () => {
-  cartDrawer.classList.toggle("open");
-});
+// ---------- BOTONES DE CATEGORÍA DEL INICIO ----------
+// En el inicio los botones solo llevan a cartas.html con el filtro elegido.
+const botonesCategoriasInicio = document.querySelectorAll(
+  ".categorias-inicio button",
+);
 
-closeCartBtn.addEventListener("click", () => {
-  cartDrawer.classList.remove("open");
-});
+botonesCategoriasInicio.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoria = boton.dataset.categoria;
 
-// EVENTOS DEL BUSCADOR
-botonBuscar.addEventListener("click", buscarCarta);
-
-inputBuscar.addEventListener("input", buscarCarta);
-
-//Filtro para inicio
-const parametrosURL = new URLSearchParams(window.location.search);
-
-const tipoURL = parametrosURL.get("tipo");
-
-if (tipoURL) {
-  cartas.forEach((carta) => {
-    const tipoCarta = carta.dataset.tipo;
-
-    if (tipoCarta === tipoURL) {
-      carta.style.display = "";
+    if (categoria === "todos") {
+      window.location.href = "cartas.html";
     } else {
-      carta.style.display = "none";
+      window.location.href = `cartas.html?tipo=${categoria}`;
     }
   });
-}
+});

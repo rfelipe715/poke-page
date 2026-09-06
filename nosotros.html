@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartas Pokémon | PokéStore</title>
+    <title>Nosotros | PokéStore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -66,44 +66,56 @@
       </aside>
     </header>
 
-    <section class="categorias">
-      <h2>Categorías</h2>
-
-      <ul class="lista-categorias">
-        <li><button data-categoria="todos" type="button">⭐ Todos</button></li>
-        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
-        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
-        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
-        <li>
-          <button data-categoria="electrico" type="button">
-            ⚡ Eléctrico
-          </button>
-        </li>
-        <li>
-          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
-        </li>
-        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
-        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
-      </ul>
-    </section>
-
-    <main class="catalogo">
-      <section class="seccion-cartas">
-        <div class="buscador">
-          <label for="buscarCarta" class="visually-hidden">
-            Buscar carta Pokémon
-          </label>
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
-
-          <button id="botonBuscar" type="button">Buscar</button>
+    <main class="nosotros-wrap">
+      <div class="nosotros-grid">
+        <div>
+          <h1>Nosotros</h1>
+          <p>
+            PokéStore nació como un proyecto de estudiantes de Desarrollo
+            Full Stack de DUOC UC, con una idea simple: crear un lugar
+            confiable donde cualquier fanático pueda comprar cartas Pokémon
+            originales, a buen precio y con despacho a todo Chile.
+          </p>
+          <p>
+            Revisamos cada carta antes de publicarla en el catálogo y
+            organizamos la tienda por tipo (fuego, agua, planta, eléctrico,
+            psíquico, normal y lucha) para que encuentres rápido lo que
+            buscas.
+          </p>
         </div>
 
-        <div class="grilla-productos pagina-cartas" id="grillaCartas"></div>
-      </section>
+        <div class="video-embed">
+          <video controls preload="metadata" poster="img/poke-bola.png">
+            <source
+              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              type="video/mp4"
+            />
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+      </div>
+
+      <h2>El equipo</h2>
+
+      <div class="equipo-grid">
+        <div class="equipo-card">
+          <div class="equipo-avatar">B</div>
+          <h3>Bryan</h3>
+          <p>Desarrollador Full Stack</p>
+        </div>
+
+        <div class="equipo-card">
+          <div class="equipo-avatar">I</div>
+          <h3>Ignacio</h3>
+          <p>Desarrollador Full Stack</p>
+        </div>
+
+        <div class="equipo-card">
+          <div class="equipo-avatar">F</div>
+          <h3>Felipe</h3>
+          <p>Desarrollador Full Stack</p>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -165,10 +177,8 @@
     </footer>
 
     <script src="JS/productos.js"></script>
-    <script src="JS/tarjetas.js"></script>
     <script src="JS/carrito.js"></script>
     <script src="JS/cuenta.js"></script>
     <script src="JS/newsletter.js"></script>
-    <script src="JS/js.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartas Pokémon | PokéStore</title>
+    <title>Blog | PokéStore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -66,44 +66,39 @@
       </aside>
     </header>
 
-    <section class="categorias">
-      <h2>Categorías</h2>
+    <main class="blogs-wrap">
+      <h1>Blog</h1>
+      <p class="lead">Noticias y consejos para coleccionistas de cartas Pokémon.</p>
 
-      <ul class="lista-categorias">
-        <li><button data-categoria="todos" type="button">⭐ Todos</button></li>
-        <li><button data-categoria="fuego" type="button">🔥 Fuego</button></li>
-        <li><button data-categoria="agua" type="button">💧 Agua</button></li>
-        <li><button data-categoria="planta" type="button">🌿 Planta</button></li>
-        <li>
-          <button data-categoria="electrico" type="button">
-            ⚡ Eléctrico
-          </button>
-        </li>
-        <li>
-          <button data-categoria="psiquico" type="button">🔮 Psíquico</button>
-        </li>
-        <li><button data-categoria="normal" type="button">⚪ Normal</button></li>
-        <li><button data-categoria="lucha" type="button">🥊 Lucha</button></li>
-      </ul>
-    </section>
-
-    <main class="catalogo">
-      <section class="seccion-cartas">
-        <div class="buscador">
-          <label for="buscarCarta" class="visually-hidden">
-            Buscar carta Pokémon
-          </label>
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
+      <div class="blog-grid">
+        <a href="blog-detalle-1.html" class="blog-card">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+            alt="Charizard"
           />
+          <div class="blog-card-body">
+            <h3>Cómo distinguir una carta original de una falsificación</h3>
+            <p>
+              Cinco detalles que revisamos en PokéStore antes de publicar
+              cualquier carta en el catálogo.
+            </p>
+          </div>
+        </a>
 
-          <button id="botonBuscar" type="button">Buscar</button>
-        </div>
-
-        <div class="grilla-productos pagina-cartas" id="grillaCartas"></div>
-      </section>
+        <a href="blog-detalle-2.html" class="blog-card">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"
+            alt="Lapras"
+          />
+          <div class="blog-card-body">
+            <h3>Cómo cuidar y guardar tu colección de cartas</h3>
+            <p>
+              Fundas, carpetas y humedad: lo básico para que tus cartas no
+              pierdan valor con el tiempo.
+            </p>
+          </div>
+        </a>
+      </div>
     </main>
 
     <footer>
@@ -165,10 +160,8 @@
     </footer>
 
     <script src="JS/productos.js"></script>
-    <script src="JS/tarjetas.js"></script>
     <script src="JS/carrito.js"></script>
     <script src="JS/cuenta.js"></script>
     <script src="JS/newsletter.js"></script>
-    <script src="JS/js.js"></script>
   </body>
 </html>
