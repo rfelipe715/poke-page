@@ -1,0 +1,377 @@
+/* =============================================================
+   CUENTA — Página de inicio de sesión y registro
+   ============================================================= */
+
+.pagina-cuenta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 100svh;
+}
+
+/* ---------- Panel lateral decorativo ---------- */
+.cuenta-lateral {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  overflow: hidden;
+  background: linear-gradient(150deg, #140c26 0%, #351322 52%, #5e1f13 100%);
+  color: #fff;
+  isolation: isolate;
+}
+
+.cuenta-lateral::before,
+.cuenta-lateral::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: -1;
+  animation: ps-aurora 20s ease-in-out infinite;
+}
+
+.cuenta-lateral::before {
+  top: -12%;
+  right: -14%;
+  width: 460px;
+  height: 460px;
+  background: rgba(232, 65, 44, 0.55);
+}
+
+.cuenta-lateral::after {
+  bottom: -18%;
+  left: -12%;
+  width: 400px;
+  height: 400px;
+  background: rgba(245, 185, 21, 0.4);
+  animation-delay: -9s;
+}
+
+.cuenta-lateral .marca {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.cuenta-lateral .pokebola {
+  border-color: #fff;
+  background: linear-gradient(
+    to bottom,
+    var(--marca) 0 calc(50% - 1px),
+    #fff calc(50% - 1px) calc(50% + 1px),
+    #f2f3fa calc(50% + 1px) 100%
+  );
+}
+
+.cuenta-lateral .pokebola::after {
+  background: #fff;
+  border-color: #21252f;
+}
+
+.cuenta-lema h2 {
+  font-size: var(--txt-3xl);
+  margin-bottom: 0.9rem;
+}
+
+.cuenta-lema h2 em {
+  font-style: normal;
+  background: var(--degradado-acento);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cuenta-lema p {
+  max-width: 42ch;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.cuenta-ventajas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+}
+
+.cuenta-ventajas li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: var(--txt-sm);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.cuenta-ventajas .tic {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--acento);
+}
+
+.cuenta-ventajas .tic svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+}
+
+.cuenta-cartas {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: auto;
+}
+
+.cuenta-cartas img {
+  width: clamp(70px, 9vw, 108px);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sombra-lg);
+  animation: ps-flotar 7s ease-in-out infinite;
+}
+
+.cuenta-cartas img:nth-child(1) {
+  --giro: -8deg;
+}
+
+.cuenta-cartas img:nth-child(2) {
+  --giro: 3deg;
+  animation-delay: -2.2s;
+}
+
+.cuenta-cartas img:nth-child(3) {
+  --giro: 11deg;
+  animation-delay: -4.4s;
+}
+
+/* ---------- Formulario ---------- */
+.cuenta-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.75rem, 5vw, 4rem);
+  background: var(--fondo);
+}
+
+.cuenta-caja {
+  width: 100%;
+  max-width: 430px;
+  margin-inline: auto;
+}
+
+.cuenta-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.volver-inicio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--txt-sm);
+  font-weight: 600;
+  color: var(--texto-suave);
+  transition: color var(--rapido) var(--suave);
+}
+
+.volver-inicio svg {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+}
+
+.volver-inicio:hover {
+  color: var(--marca);
+}
+
+.cuenta-caja > h1 {
+  font-size: var(--txt-2xl);
+  margin-bottom: 0.4rem;
+}
+
+.cuenta-caja > .subtitulo {
+  margin-bottom: 1.75rem;
+  color: var(--texto-suave);
+  font-size: var(--txt-sm);
+}
+
+/* Pestañas iniciar sesión / registrarse */
+.pestanas {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+  padding: 0.3rem;
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-full);
+  background: var(--fondo-hundido);
+}
+
+.pestanas button {
+  position: relative;
+  z-index: 1;
+  padding: 0.65rem 1rem;
+  border-radius: var(--r-full);
+  font-size: var(--txt-sm);
+  font-weight: 700;
+  color: var(--texto-suave);
+  transition: color var(--normal) var(--suave);
+}
+
+.pestanas button[aria-selected="true"] {
+  color: var(--texto);
+}
+
+.pestana-indicador {
+  position: absolute;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  left: 0.3rem;
+  width: calc(50% - 0.3rem);
+  border-radius: var(--r-full);
+  background: var(--superficie);
+  box-shadow: var(--sombra-sm);
+  transition: transform var(--normal) var(--resorte);
+}
+
+.pestanas[data-activa="registro"] .pestana-indicador {
+  transform: translateX(calc(100% - 0.05rem));
+}
+
+.formulario-cuenta[hidden] {
+  display: none;
+}
+
+.formulario-cuenta {
+  animation: ps-subir 0.35s var(--suave);
+}
+
+.opciones-sesion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.enlace-suave {
+  font-size: var(--txt-sm);
+  font-weight: 600;
+  color: var(--marca);
+}
+
+.enlace-suave:hover {
+  text-decoration: underline;
+}
+
+/* Medidor de seguridad de contraseña */
+.medidor {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.medidor span {
+  height: 4px;
+  flex: 1;
+  border-radius: var(--r-full);
+  background: var(--linea-fuerte);
+  transition: background var(--normal) var(--suave);
+}
+
+.medidor[data-nivel="1"] span:nth-child(1) {
+  background: var(--error);
+}
+
+.medidor[data-nivel="2"] span:nth-child(-n + 2) {
+  background: var(--aviso);
+}
+
+.medidor[data-nivel="3"] span:nth-child(-n + 3) {
+  background: var(--exito);
+}
+
+.medidor-texto {
+  margin-top: 0.35rem;
+  font-size: var(--txt-xs);
+  color: var(--texto-tenue);
+}
+
+/* Cuentas de demostración */
+.demo {
+  margin-top: 1.75rem;
+  padding: 1rem 1.15rem;
+  border: 1px dashed var(--linea-fuerte);
+  border-radius: var(--r-lg);
+  background: var(--superficie-2);
+}
+
+.demo h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.6rem;
+  font-size: var(--txt-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texto-tenue);
+}
+
+.demo h2 svg {
+  width: 14px;
+  height: 14px;
+}
+
+.demo-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.demo-lista button {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--linea-fuerte);
+  border-radius: var(--r-full);
+  background: var(--superficie);
+  font-family: var(--fuente-mono);
+  font-size: var(--txt-xs);
+  font-weight: 600;
+  color: var(--texto-suave);
+  transition: all var(--rapido) var(--suave);
+}
+
+.demo-lista button:hover {
+  border-color: var(--marca);
+  color: var(--marca);
+  transform: translateY(-2px);
+}
+
+.demo p {
+  margin-top: 0.6rem;
+  font-size: var(--txt-xs);
+  color: var(--texto-tenue);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .pagina-cuenta {
+    grid-template-columns: 1fr;
+  }
+
+  .cuenta-lateral {
+    display: none;
+  }
+
+  .cuenta-panel {
+    min-height: 100svh;
+  }
+}

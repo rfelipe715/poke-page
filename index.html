@@ -1,278 +1,307 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-tema="claro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokeStore</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>PokéStore · Cartas Pokémon del Set Base</title>
+    <meta
+      name="description"
+      content="Tienda ficticia de cartas Pokémon del Set Base. Proyecto académico de Fullstack 2, DUOC UC."
+    />
+
+    <link rel="stylesheet" href="CSS/base.css" />
+    <link rel="stylesheet" href="CSS/componentes.css" />
+    <link rel="stylesheet" href="CSS/layout.css" />
+
+    <!-- Aplica el tema guardado antes de pintar, para que no parpadee -->
+    <script>
+      // Marca que hay JavaScript disponible (lo usa el revelado al hacer scroll)
+      document.documentElement.classList.add("js");
+
+      const temaGuardado = localStorage.getItem("pokestore:tema");
+      document.documentElement.dataset.tema = temaGuardado
+        ? JSON.parse(temaGuardado)
+        : matchMedia("(prefers-color-scheme: dark)").matches
+        ? "oscuro"
+        : "claro";
+    </script>
+
+    <script defer src="JS/datos.js"></script>
+    <script defer src="JS/comun.js"></script>
+    <script defer src="JS/cuenta.js"></script>
+    <script defer src="JS/carrito.js"></script>
+    <script defer src="JS/catalogo.js"></script>
+    <script defer src="JS/inicio.js"></script>
   </head>
 
   <body>
-    <header class="catalogo-header">
-      <div class="header-contenedor">
-        <div class="logo-tienda">
-          <div class="logo-titulo">
-            <h1>PokéStore</h1>
-            <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
-          </div>
+    <a class="saltar-al-contenido" href="#contenido">Saltar al contenido</a>
 
-          <p>Cartas Pokémon para coleccionistas</p>
+    <noscript>
+      <p class="aviso-nojs">
+        Esta tienda necesita JavaScript activado para mostrar el catálogo.
+      </p>
+    </noscript>
+
+    <header data-cabecera></header>
+
+    <main id="contenido">
+      <!-- ============ Portada ============ -->
+      <section class="portada">
+        <div class="portada-fondo" aria-hidden="true">
+          <span class="aurora a1"></span>
+          <span class="aurora a2"></span>
+          <span class="aurora a3"></span>
+          <div class="rejilla"></div>
         </div>
 
-        <nav class="menu">
-          <a href="index.html">Inicio</a>
-          <a href="cartas.html">Cartas</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#contacto">Contacto</a>
+        <div class="contenedor portada-interior">
+          <div class="portada-texto">
+            <p class="etiqueta-superior">⚡ Set Base 1999 · Edición en español</p>
 
-          <button class="cart-btn" id="openCart">
-            Carrito 🛒
-            <span class="cart-count" id="cartCount">0</span>
-          </button>
-        </nav>
+            <h1>Cartas Pokémon <em>legendarias</em> para tu colección</h1>
+
+            <p class="portada-bajada">
+              Reunimos las cartas más buscadas del Set Base, revisadas una por
+              una y enviadas en funda protectora. Encuentra tu holográfica
+              pendiente y completa el álbum de una vez.
+            </p>
+
+            <form class="portada-botones" id="form-busqueda-portada">
+              <div class="buscador">
+                <input
+                  type="search"
+                  aria-label="Buscar una carta"
+                  placeholder="Busca Charizard, Pikachu, Mewtwo..."
+                />
+              </div>
+              <button class="btn btn-primario btn-grande" type="submit">
+                Buscar carta
+              </button>
+              <a class="btn btn-secundario btn-grande" href="cartas.html">
+                Ver catálogo
+              </a>
+            </form>
+
+            <ul class="portada-datos">
+              <li><strong>52</strong><span>Cartas en stock</span></li>
+              <li><strong>7</strong><span>Tipos distintos</span></li>
+              <li><strong>48 h</strong><span>Despacho promedio</span></li>
+            </ul>
+          </div>
+
+          <div class="portada-visual" id="portada-visual"></div>
+        </div>
+      </section>
+
+      <!-- ============ Cinta de tipos ============ -->
+      <div class="cinta">
+        <div class="cinta-pista" id="cinta-pista"></div>
       </div>
 
-      <aside class="drawer" id="drawer">
-        <div class="drawer-head">
-          <h3>Tu carrito</h3>
-          <button class="drawer-close" id="closeCart">×</button>
-        </div>
-
-        <div class="drawer-items" id="drawerItems">
-          <div class="drawer-empty">
-            Tu carrito está vacío.<br />
-            Agrega alguna carta del catálogo.
-          </div>
-        </div>
-
-        <div class="drawer-foot">
-          <div class="drawer-total">
-            <span>Total</span>
-            <span id="drawerTotal">$0</span>
+      <!-- ============ Beneficios ============ -->
+      <section class="seccion" id="beneficios">
+        <div class="contenedor">
+          <div class="encabezado-seccion centrado revelar">
+            <p class="etiqueta-superior">Por qué comprar aquí</p>
+            <h2>Coleccionar sin sustos</h2>
+            <p>
+              Cuidamos cada carta como si fuera para nuestra propia colección.
+            </p>
           </div>
 
-          <button class="checkout-btn" id="checkoutBtn" disabled>
-            Confirmar pedido
-          </button>
-        </div>
-      </aside>
-    </header>
-
-    <section class="categorias">
-      <h2>Encuentra tus cartas por categoría</h2>
-
-      <div class="lista-categorias">
-        <button onclick="window.location.href = 'cartas.html'">⭐ Todas</button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=fuego'">
-          🔥 Fuego
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=agua'">
-          💧 Agua
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=planta'">
-          🌿 Planta
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=electrico'">
-          ⚡ Eléctrico
-        </button>
-
-        <button onclick="window.location.href = 'cartas.html?tipo=psiquico'">
-          🔮 Psíquico
-        </button>
-      </div>
-    </section>
-
-    <main class="catalogo">
-      <section class="seccion-cartas" id="cartas">
-        <div class="buscador">
-          <input
-            type="text"
-            id="buscarCarta"
-            placeholder="Buscar carta Pokémon..."
-          />
-
-          <button>Buscar</button>
-        </div>
-
-        <h2>Cartas Destacadas</h2>
-
-        <div class="grilla-productos">
-          <!-- Venusaur -->
-          <article class="card" data-tipo="planta">
-            <div class="card-img">
-              <img
-                src="https://dz3we2x72f7ol.cloudfront.net/expansions/mega-evolution/es-es/JL2G_ES_3.png"
-                alt="Venusaur"
-              />
-              <span class="badge">-20% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Venusaur</h3>
-
-              <p class="card-price">
-                <span class="old-price">$55.990</span>
-                $44.792
+          <div class="grilla-beneficios">
+            <article class="beneficio revelar">
+              <div class="beneficio-icono" data-icono="envio"></div>
+              <h3>Envío a todo Chile</h3>
+              <p>
+                Gratis sobre $40.000. Despachamos en 48 horas hábiles con
+                seguimiento incluido.
               </p>
+            </article>
 
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Dragonite -->
-          <article class="card" data-tipo="normal">
-            <div class="card-img">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qd-LVsziDa-_FbQpZEJ0B1Ez1lSlRmmbX3BPHohdiQ&s"
-                alt="Dragonite"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Dragonite</h3>
-
-              <p class="card-price">
-                <span class="old-price">$65.990</span>
-                $56.091
+            <article class="beneficio revelar" style="--retardo: 90ms">
+              <div class="beneficio-icono" data-icono="escudo"></div>
+              <h3>Autenticidad garantizada</h3>
+              <p>
+                Cada carta se revisa a mano. Si algo no calza, te devolvemos el
+                dinero completo.
               </p>
+            </article>
 
-              <button class="btn-comprar">Agregar al carro</button>
+            <article class="beneficio revelar" style="--retardo: 180ms">
+              <div class="beneficio-icono" data-icono="estrella"></div>
+              <h3>Estado declarado</h3>
+              <p>
+                Publicamos el estado real de cada carta, sin sorpresas al abrir
+                el sobre.
+              </p>
+            </article>
+
+            <article class="beneficio revelar" style="--retardo: 270ms">
+              <div class="beneficio-icono" data-icono="reloj"></div>
+              <h3>Soporte de verdad</h3>
+              <p>
+                Escríbenos y te responde una persona, no un robot. De lunes a
+                sábado.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Categorías ============ -->
+      <section class="seccion-ajustada">
+        <div class="contenedor">
+          <div class="encabezado-seccion revelar">
+            <p class="etiqueta-superior">Explorar</p>
+            <h2>Busca por tipo</h2>
+            <p>Filtra el catálogo completo según el tipo que te falte.</p>
+          </div>
+
+          <div class="grilla-categorias" id="grilla-categorias"></div>
+        </div>
+      </section>
+
+      <!-- ============ Destacadas ============ -->
+      <section class="seccion">
+        <div class="contenedor">
+          <div class="encabezado-seccion fila-entre revelar">
+            <div>
+              <p class="etiqueta-superior">Lo más buscado</p>
+              <h2>Cartas destacadas</h2>
             </div>
-          </article>
+            <a class="btn btn-secundario" href="cartas.html">
+              Ver las 52 cartas
+            </a>
+          </div>
 
-          <!-- Charizard -->
-          <article class="card" data-tipo="fuego">
-            <div class="card-img">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLwVAaOqd5CvoYBuXRWfIB3sbNTsBDG0AseNpxnp5-A&s=10"
-                alt="Charizard"
-              />
-              <span class="badge">-15% OFF</span>
+          <div class="grilla-cartas" id="grilla-destacadas"></div>
+        </div>
+      </section>
+
+      <!-- ============ Promoción ============ -->
+      <section class="seccion-ajustada">
+        <div class="contenedor">
+          <div class="promo revelar">
+            <div class="promo-interior">
+              <div>
+                <p class="etiqueta-superior">Oferta del día</p>
+                <h2>Hasta 20% en 11 cartas seleccionadas</h2>
+                <p>
+                  Venusaur, Gyarados y Pikachu con un 20% de descuento directo.
+                  Los precios vuelven a la normalidad cuando termine el contador.
+                </p>
+                <a class="btn btn-primario btn-grande" href="cartas.html?orden=descuento">
+                  Ver ofertas
+                </a>
+              </div>
+
+              <div class="cuenta-regresiva" aria-label="Tiempo restante de la oferta">
+                <div><strong id="cuenta-horas">00</strong><span>Horas</span></div>
+                <div><strong id="cuenta-minutos">00</strong><span>Min</span></div>
+                <div><strong id="cuenta-segundos">00</strong><span>Seg</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Nosotros ============ -->
+      <section class="seccion" id="nosotros">
+        <div class="contenedor nosotros">
+          <div class="revelar">
+            <p class="etiqueta-superior">Nosotros</p>
+            <h2 class="titulo-nosotros">
+              Una tienda hecha por coleccionistas
+            </h2>
+            <p>
+              PokéStore nació como un proyecto de la carrera de Informática en
+              DUOC UC, pero lo armamos como nos gustaría encontrarlo: catálogo
+              claro, precios visibles y cero letra chica.
+            </p>
+            <p>
+              Trabajamos con cartas del Set Base original de 1999, la colección
+              que empezó todo. Cada una pasa por revisión de bordes, centrado y
+              superficie antes de publicarse.
+            </p>
+            <a class="btn btn-secundario" href="#contacto">Hablar con nosotros</a>
+          </div>
+
+          <div class="metricas revelar" style="--retardo: 120ms">
+            <div class="metrica"><strong>52</strong><span>Cartas distintas</span></div>
+            <div class="metrica"><strong>1999</strong><span>Set Base original</span></div>
+            <div class="metrica"><strong>4.4</strong><span>Valoración media</span></div>
+            <div class="metrica"><strong>2.400+</strong><span>Cartas enviadas</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Contacto ============ -->
+      <section class="seccion" id="contacto">
+        <div class="contenedor contacto">
+          <div class="revelar">
+            <p class="etiqueta-superior">Contacto</p>
+            <h2>¿Buscas una carta puntual?</h2>
+            <p>
+              Cuéntanos qué te falta para cerrar la colección y la buscamos por
+              ti. También respondemos dudas sobre estados y envíos.
+            </p>
+
+            <ul class="datos-contacto">
+              <li>
+                <span class="icono-contacto">📧</span>
+                <span><strong>Correo</strong> pokestore@duocuc.cl</span>
+              </li>
+              <li>
+                <span class="icono-contacto">📱</span>
+                <span><strong>Teléfono</strong> +56 9 1234 5678</span>
+              </li>
+              <li>
+                <span class="icono-contacto">📍</span>
+                <span><strong>Retiro en tienda</strong> Sede Puente Alto, Santiago</span>
+              </li>
+              <li>
+                <span class="icono-contacto">🕘</span>
+                <span><strong>Horario</strong> Lunes a sábado, 10:00 a 19:00</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="formulario-contacto revelar" id="form-contacto" novalidate>
+            <div class="campo">
+              <label for="contacto-nombre">Nombre</label>
+              <div class="campo-control">
+                <input id="contacto-nombre" type="text" placeholder="Tu nombre" />
+              </div>
+              <span class="campo-error"></span>
             </div>
 
-            <div class="card-info">
-              <h3 class="card-title">Charizard</h3>
-
-              <p class="card-price">$65.990</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Pikachu -->
-          <article class="card" data-tipo="electrico">
-            <div class="card-img">
-              <img
-                src="https://dz3we2x72f7ol.cloudfront.net/expansions/30th-celebration/es-mx/2M6P_LA_23.png"
-                alt="Pikachu"
-              />
-              <span class="badge">-15% OFF</span>
+            <div class="campo">
+              <label for="contacto-correo">Correo electrónico</label>
+              <div class="campo-control">
+                <input id="contacto-correo" type="email" placeholder="tu@correo.cl" />
+              </div>
+              <span class="campo-error"></span>
             </div>
 
-            <div class="card-info">
-              <h3 class="card-title">Pikachu</h3>
-
-              <p class="card-price">$65.990</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Mewtwo -->
-          <article class="card" data-tipo="psiquico">
-            <div class="card-img">
-              <img
-                src="https://images.pokemontcg.io/base1/10.png"
-                alt="Mewtwo"
-              />
-              <span class="badge">-20% OFF</span>
+            <div class="campo">
+              <label for="contacto-mensaje">Mensaje</label>
+              <textarea
+                id="contacto-mensaje"
+                placeholder="Busco un Charizard en buen estado..."
+              ></textarea>
+              <span class="campo-error"></span>
             </div>
 
-            <div class="card-info">
-              <h3 class="card-title">Mewtwo</h3>
-
-              <p class="card-price">$30.000</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Blastoise -->
-          <article class="card" data-tipo="agua">
-            <div class="card-img">
-              <img
-                src="https://images.pokemontcg.io/base1/2.png"
-                alt="Blastoise"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Blastoise</h3>
-
-              <p class="card-price">$35.000</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
-
-          <!-- Raichu -->
-          <article class="card" data-tipo="electrico">
-            <div class="card-img">
-              <img
-                src="https://images.pokemontcg.io/base1/14.png"
-                alt="Raichu"
-              />
-              <span class="badge">-15% OFF</span>
-            </div>
-
-            <div class="card-info">
-              <h3 class="card-title">Raichu</h3>
-
-              <p class="card-price">$18.000</p>
-
-              <button class="btn-comprar">Agregar al carro</button>
-            </div>
-          </article>
+            <button class="btn btn-primario btn-bloque btn-grande" type="submit">
+              Enviar mensaje
+            </button>
+          </form>
         </div>
       </section>
     </main>
 
-    <div class="ver-mas">
-      <a href="cartas.html">Ver todas las cartas</a>
-    </div>
-
-    <!-- Nosotros -->
-    <section id="nosotros" class="info-seccion">
-      <h2>Nosotros</h2>
-
-      <p>
-        Somos una tienda dedicada a la venta y colección de cartas Pokémon.
-        Nuestro objetivo es ofrecer cartas para todos los fanáticos y
-        coleccionistas.
-      </p>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="info-seccion">
-      <h2>Contacto</h2>
-
-      <p>¿Tienes alguna pregunta? Contáctanos.</p>
-      <p>📧 Email: pokestore@gmail.com</p>
-      <p>📱 Teléfono: +56 9 1234 5678</p>
-    </section>
-
-    <footer>
-      <h3>PokéStore</h3>
-      <p>Tu tienda de cartas Pokémon</p>
-      <p>© 2026 PokéStore - Todos los derechos reservados</p>
-    </footer>
-
-    <script src="JS/js.js"></script>
+    <footer data-pie></footer>
   </body>
 </html>

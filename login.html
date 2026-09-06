@@ -1,93 +1,231 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" data-tema="claro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión · PokéStore</title>
+    <meta
+      name="description"
+      content="Accede a tu cuenta de PokéStore o crea una nueva para confirmar tus pedidos."
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/base.css" />
+    <link rel="stylesheet" href="CSS/componentes.css" />
+    <link rel="stylesheet" href="CSS/layout.css" />
+    <link rel="stylesheet" href="CSS/cuenta.css" />
 
-    <title>Iniciar sesión | PokeStore</title>
+    <script>
+      // Marca que hay JavaScript disponible (lo usa el revelado al hacer scroll)
+      document.documentElement.classList.add("js");
 
-    <link rel="stylesheet" href="CSS/inicio-sesion.css">
-</head>
+      const temaGuardado = localStorage.getItem("pokestore:tema");
+      document.documentElement.dataset.tema = temaGuardado
+        ? JSON.parse(temaGuardado)
+        : matchMedia("(prefers-color-scheme: dark)").matches
+        ? "oscuro"
+        : "claro";
+    </script>
 
-<body>
+    <script defer src="JS/datos.js"></script>
+    <script defer src="JS/comun.js"></script>
+    <script defer src="JS/cuenta.js"></script>
+  </head>
 
-    <main class="login-page">
+  <body>
+    <noscript>
+      <p class="aviso-nojs">
+        Necesitas JavaScript activado para iniciar sesión.
+      </p>
+    </noscript>
 
-        <section class="login-card">
+    <div class="pagina-cuenta">
+      <!-- ============ Lado decorativo ============ -->
+      <aside class="cuenta-lateral">
+        <a class="marca" href="index.html">
+          <span class="pokebola" aria-hidden="true"></span>
+          <span>Poké<em>Store</em></span>
+        </a>
 
-            <div class="card-decoration">
-                <div class="pokeball">
-                    <span></span>
-                </div>
+        <div class="cuenta-lema">
+          <h2>Tu colección, <em>siempre contigo</em></h2>
+          <p>
+            Crea una cuenta para guardar tus favoritas, seguir tus pedidos y
+            enterarte primero de cada ingreso del Set Base.
+          </p>
+
+          <ul class="cuenta-ventajas">
+            <li>
+              <span class="tic" data-icono="check"></span>
+              Guarda tus cartas favoritas
+            </li>
+            <li>
+              <span class="tic" data-icono="check"></span>
+              Confirma pedidos en un clic
+            </li>
+            <li>
+              <span class="tic" data-icono="check"></span>
+              Envío gratis sobre $40.000
+            </li>
+          </ul>
+        </div>
+
+        <div class="cuenta-cartas" aria-hidden="true">
+          <img src="https://images.pokemontcg.io/base1/4.png" alt="" data-respaldo />
+          <img src="https://images.pokemontcg.io/base1/58.png" alt="" data-respaldo />
+          <img src="https://images.pokemontcg.io/base1/2.png" alt="" data-respaldo />
+        </div>
+      </aside>
+
+      <!-- ============ Formularios ============ -->
+      <main class="cuenta-panel">
+        <div class="cuenta-caja">
+          <div class="cuenta-superior">
+            <a class="volver-inicio" href="index.html">
+              <span data-icono="flecha"></span> Volver al inicio
+            </a>
+            <button
+              class="btn-icono"
+              data-accion="tema"
+              aria-label="Cambiar tema"
+            ></button>
+          </div>
+
+          <h1>Bienvenido de vuelta</h1>
+          <p class="subtitulo">
+            Entra con tu cuenta o crea una nueva en menos de un minuto.
+          </p>
+
+          <div class="pestanas" id="pestanas-cuenta" data-activa="login" role="tablist">
+            <span class="pestana-indicador" aria-hidden="true"></span>
+            <button type="button" data-pestana="login" role="tab" aria-selected="true">
+              Iniciar sesión
+            </button>
+            <button type="button" data-pestana="registro" role="tab" aria-selected="false">
+              Crear cuenta
+            </button>
+          </div>
+
+          <!-- Iniciar sesión -->
+          <form class="formulario-cuenta" id="form-login" novalidate>
+            <div class="campo">
+              <label for="login-correo">Correo electrónico</label>
+              <div class="campo-control">
+                <input
+                  id="login-correo"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="correo@ejemplo.cl"
+                />
+              </div>
+              <span class="campo-error"></span>
             </div>
 
-            <div class="login-header">
-
-                <h1>PokeStore</h1>
-
-                <p>
-                    Inicia sesión para continuar
-                </p>
-
+            <div class="campo">
+              <label for="login-clave">Contraseña</label>
+              <div class="campo-control">
+                <input
+                  id="login-clave"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Ingresa tu contraseña"
+                />
+                <button
+                  class="btn-ojo"
+                  type="button"
+                  aria-label="Mostrar contraseña"
+                ></button>
+              </div>
+              <span class="campo-error"></span>
             </div>
 
-            <form>
-
-                <div class="form-group">
-
-                    <label for="input-email">
-                        Correo electrónico
-                    </label>
-
-                    <input id="input-email" type="email" placeholder="correo@ejemplo.com">
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="input-password">
-                        Contraseña
-                    </label>
-
-                    <input id="input-password" type="password" placeholder="Ingresa tu contraseña">
-
-                </div>
-
-                <div class="login-options">
-
-                    <label class="remember">
-                        <input type="checkbox">
-                        Recordarme
-                    </label>
-
-                    <a href="#" class="forgot">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-
-                </div>
-
-                <button id="btn-inicio-sesion" type="button">
-                    INICIAR SESIÓN
-                </button>
-
-            </form>
-
-            <div class="register">
-
-                <p>
-                    ¿No tienes una cuenta?
-                    <a href="#">Regístrate</a>
-                </p>
-
+            <div class="opciones-sesion">
+              <label class="casilla">
+                <input type="checkbox" id="login-recordar" />
+                Recordarme
+              </label>
+              <a class="enlace-suave" href="#">¿Olvidaste tu contraseña?</a>
             </div>
 
-        </section>
+            <button class="btn btn-primario btn-bloque btn-grande" type="submit">
+              Iniciar sesión
+            </button>
+          </form>
 
-    </main>
+          <!-- Crear cuenta -->
+          <form class="formulario-cuenta" id="form-registro" novalidate hidden>
+            <div class="campo">
+              <label for="registro-nombre">Nombre</label>
+              <div class="campo-control">
+                <input id="registro-nombre" type="text" placeholder="Cómo te llamamos" />
+              </div>
+              <span class="campo-error"></span>
+            </div>
 
-    <script src="JS/inicio-sesion.js"></script>
+            <div class="campo">
+              <label for="registro-correo">Correo electrónico</label>
+              <div class="campo-control">
+                <input id="registro-correo" type="email" placeholder="correo@ejemplo.cl" />
+              </div>
+              <span class="campo-error"></span>
+            </div>
 
-</body>
+            <div class="campo">
+              <label for="registro-clave">Contraseña</label>
+              <div class="campo-control">
+                <input
+                  id="registro-clave"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Mínimo 4 caracteres"
+                />
+                <button
+                  class="btn-ojo"
+                  type="button"
+                  aria-label="Mostrar contraseña"
+                ></button>
+              </div>
+              <div class="medidor" id="medidor-clave" data-nivel="0">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="medidor-texto" id="medidor-texto">Mínimo 4 caracteres</span>
+              <span class="campo-error"></span>
+            </div>
 
+            <div class="campo">
+              <label for="registro-repetir">Repetir contraseña</label>
+              <div class="campo-control">
+                <input
+                  id="registro-repetir"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Escríbela otra vez"
+                />
+              </div>
+              <span class="campo-error"></span>
+            </div>
+
+            <div class="opciones-sesion">
+              <label class="casilla">
+                <input type="checkbox" id="registro-terminos" />
+                Acepto los términos y condiciones
+              </label>
+            </div>
+
+            <button class="btn btn-primario btn-bloque btn-grande" type="submit">
+              Crear mi cuenta
+            </button>
+          </form>
+
+          <div class="demo">
+            <h2><span data-icono="pokebola"></span> Cuentas de prueba</h2>
+            <div class="demo-lista" id="lista-demo"></div>
+            <p>
+              Haz clic en un correo para rellenar el formulario. La contraseña de
+              todas es <strong>1234</strong>.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
