@@ -77,3 +77,22 @@ if (tipoURL) {
     }
   });
 }
+
+const usuarioHeader = document.getElementById('usuario-header');
+const nombreHeader = document.getElementById('nombre-header');
+
+const nombreUsuario = localStorage.getItem('nombre_usuario');
+
+if (nombreUsuario) {
+
+    nombreHeader.textContent = nombreUsuario;
+
+    // Si ya inició sesión, el monito manda a la cuenta
+    usuarioHeader.href = 'mi-cuenta.html';
+
+} else {
+
+    // Si no inició sesión, manda al login
+    usuarioHeader.href = 'login.html';
+
+}
