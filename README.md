@@ -64,7 +64,3 @@ No requiere instalación ni dependencias:
 
 1. Clona o descarga el repositorio.
 2. Abre `index.html` en tu navegador (o usa la extensión "Live Server" de VS Code).
-
-## Documentación adicional
-
-Para una explicación paso a paso del código, pensada para quien recién está aprendiendo (qué es `localStorage`, qué son los media queries, etc.) revisa **[GUIA-DEFENSA.md](GUIA-DEFENSA.md)**.
