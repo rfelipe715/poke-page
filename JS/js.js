@@ -262,6 +262,7 @@ if (tipoURL) {
 
 const usuarioHeader = document.getElementById('usuario-header');
 const nombreHeader = document.getElementById('nombre-header');
+const botonSalirHeader = document.getElementById('btn-cerrar-sesion-header');
 
 const nombreUsuario = localStorage.getItem('nombre_usuario');
 
@@ -272,9 +273,24 @@ if (nombreUsuario) {
     // Si ya inició sesión, el monito manda a la cuenta
     usuarioHeader.href = 'mi-cuenta.html';
 
+    botonSalirHeader.hidden = false;
+
 } else {
 
     // Si no inició sesión, manda al login
     usuarioHeader.href = 'login.html';
 
+    botonSalirHeader.hidden = true;
+
 }
+
+// Cerrar sesión desde el header
+botonSalirHeader.addEventListener('click', () => {
+
+    localStorage.removeItem('nombre_usuario');
+    localStorage.removeItem('email_usuario');
+    localStorage.removeItem('rol_usuario');
+
+    window.location.href = 'index.html';
+
+});

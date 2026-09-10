@@ -542,3 +542,22 @@ footer {
     background-color: #ffffff;
     transform: scale(1.05);
 }
+
+.btn-salir-header {
+    padding: 10px 15px;
+
+    background-color: #e53935;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-salir-header:hover {
+    background-color: #b71c1c;
+}
