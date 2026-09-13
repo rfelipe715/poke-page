@@ -105,6 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  cursor: pointer;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -484,6 +485,10 @@ footer {
   .pagina-cartas {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .detalle-producto {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Ajustes del header en pantallas pequeñas */
@@ -560,4 +565,119 @@ footer {
 
 .btn-salir-header:hover {
     background-color: #b71c1c;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span[aria-current] {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Detalle de producto */
+.detalle-producto {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2.5rem;
+}
+
+.producto-img-principal img {
+  padding: 1.5rem;
+}
+
+.producto-miniaturas {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.miniatura {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.miniatura.activa,
+.miniatura:hover {
+  border-color: #0070f3;
+}
+
+.producto-info .card-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.producto-info .card-price {
+  font-size: 1.5rem;
+}
+
+.producto-descripcion {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.selector-cantidad {
+  margin-bottom: 1.2rem;
+}
+
+.selector-cantidad span {
+  min-width: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+.producto-no-encontrado {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+  color: #555;
+}
+
+.productos-relacionados {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1rem 2rem;
+}
+
+.productos-relacionados h2 {
+  color: #575881;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
