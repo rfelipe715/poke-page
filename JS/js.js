@@ -238,10 +238,10 @@ checkoutBtn.addEventListener("click", () => {
 
 renderizarCarrito();
 
-// EVENTOS DEL BUSCADOR
-botonBuscar.addEventListener("click", buscarCarta);
+// EVENTOS DEL BUSCADOR (no todas las páginas tienen buscador, ej. login y mi-cuenta)
+if (botonBuscar) botonBuscar.addEventListener("click", buscarCarta);
 
-inputBuscar.addEventListener("input", buscarCarta);
+if (inputBuscar) inputBuscar.addEventListener("input", buscarCarta);
 
 //Filtro para inicio
 const parametrosURL = new URLSearchParams(window.location.search);

@@ -7,10 +7,65 @@
 
     <title>Iniciar sesión | PokeStore</title>
 
+    <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="CSS/inicio-sesion.css">
 </head>
 
 <body>
+
+    <header class="catalogo-header">
+      <div class="header-contenedor">
+        <div class="logo-tienda">
+          <a class="logo-link" href="index.html">
+            <div class="logo-titulo">
+              <h1>PokéStore</h1>
+              <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+            </div>
+          </a>
+
+          <p>Cartas Pokémon para coleccionistas</p>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Inicio</a>
+          <a href="cartas.html">Cartas</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+          <a href="login.html" id="usuario-header" class="usuario-header">👤 <span id="nombre-header">Iniciar sesión</span></a>
+          <button id="btn-cerrar-sesion-header" class="btn-salir-header" hidden>Salir</button>
+
+          <button class="cart-btn" id="openCart">
+            Carrito 🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+          <h3>Tu carrito</h3>
+          <button class="drawer-close" id="closeCart">×</button>
+        </div>
+
+        <div class="drawer-items" id="drawerItems">
+          <div class="drawer-empty">
+            Tu carrito está vacío.<br />
+            Agrega alguna carta del catálogo.
+          </div>
+        </div>
+
+        <div class="drawer-foot">
+          <div class="drawer-total">
+            <span>Total</span>
+            <span id="drawerTotal">$0</span>
+          </div>
+
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Confirmar pedido
+          </button>
+        </div>
+      </aside>
+    </header>
 
     <main class="login-page">
 
@@ -86,6 +141,13 @@
 
     </main>
 
+    <footer>
+      <h3>PokéStore</h3>
+      <p>Tu tienda de cartas Pokémon</p>
+      <p>© 2026 PokéStore - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="JS/js.js"></script>
     <script src="JS/inicio-sesion.js"></script>
 
 </body>
