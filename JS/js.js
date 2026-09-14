@@ -248,7 +248,7 @@ checkoutBtn.addEventListener("click", () => {
 
 renderizarCarrito();
 
-// EVENTOS DEL BUSCADOR (no todas las páginas tienen buscador, ej. producto.html)
+// EVENTOS DEL BUSCADOR (no todas las páginas tienen buscador, ej. login y mi-cuenta)
 if (botonBuscar) botonBuscar.addEventListener("click", buscarCarta);
 
 if (inputBuscar) inputBuscar.addEventListener("input", buscarCarta);
