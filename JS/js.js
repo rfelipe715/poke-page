@@ -308,6 +308,7 @@ botonSalirHeader.addEventListener('click', () => {
 // NEWSLETTER DEL FOOTER
 const formNewsletter = document.getElementById('formNewsletter');
 const inputNewsletter = document.getElementById('inputNewsletter');
+const errorNewsletter = document.getElementById('errorNewsletter');
 
 if (formNewsletter) {
 
@@ -318,10 +319,12 @@ if (formNewsletter) {
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     if (!emailValido) {
-      alert('Ingresa un correo electrónico válido');
+      errorNewsletter.textContent = 'Ingresa un correo electrónico válido';
       inputNewsletter.focus();
       return;
     }
+
+    errorNewsletter.textContent = '';
 
     alert('¡Gracias por suscribirte, ' + email + '!');
     formNewsletter.reset();
