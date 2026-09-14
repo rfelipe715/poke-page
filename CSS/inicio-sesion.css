@@ -1,19 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-
     background:
         radial-gradient(circle at top, #244c8f, #101b35 60%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     color: #222;
 }
@@ -23,7 +10,6 @@ body {
 
 .login-page {
     width: 100%;
-    min-height: 100vh;
 
     display: flex;
     justify-content: center;

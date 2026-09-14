@@ -6,12 +6,12 @@ const botonCerrarSesion = document.getElementById('btn-cerrar-sesion');
 
 
 // Obtener datos del usuario que inició sesión
-const nombreUsuario = localStorage.getItem('nombre_usuario');
+const nombreGuardado = localStorage.getItem('nombre_usuario');
 const emailUsuario = localStorage.getItem('email_usuario');
 
 
 // Si no hay usuario iniciado, mandar al login
-if (!nombreUsuario) {
+if (!nombreGuardado) {
 
     window.location.href = 'login.html';
 
@@ -19,7 +19,7 @@ if (!nombreUsuario) {
 
 
 // Mostrar los datos
-inputNombre.value = nombreUsuario;
+inputNombre.value = nombreGuardado;
 inputEmail.value = emailUsuario;
 
 
