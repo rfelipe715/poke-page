@@ -294,3 +294,27 @@ botonSalirHeader.addEventListener('click', () => {
     window.location.href = 'index.html';
 
 });
+
+// NEWSLETTER DEL FOOTER
+const formNewsletter = document.getElementById('formNewsletter');
+const inputNewsletter = document.getElementById('inputNewsletter');
+
+if (formNewsletter) {
+
+  formNewsletter.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+
+    const email = inputNewsletter.value.trim();
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!emailValido) {
+      alert('Ingresa un correo electrónico válido');
+      inputNewsletter.focus();
+      return;
+    }
+
+    alert('¡Gracias por suscribirte, ' + email + '!');
+    formNewsletter.reset();
+  });
+
+}

@@ -46,17 +46,20 @@ poke-page/
 ├── cartas.html           # Catálogo completo de cartas
 ├── login.html            # Inicio de sesión
 ├── mi-cuenta.html        # Perfil del usuario
-├── styles.css            # Estilos del home y del catálogo
+├── layout.css            # Header, carrito y footer compartidos por TODAS las páginas
+├── styles.css            # Estilos propios del home y del catálogo
 ├── CSS/
-│   ├── inicio-sesion.css # Estilos del login
-│   └── mi-cuenta.css     # Estilos de "Mi cuenta"
+│   ├── inicio-sesion.css # Estilos propios del login
+│   └── mi-cuenta.css     # Estilos propios de "Mi cuenta"
 ├── JS/
-│   ├── js.js              # Carrito, filtros, buscador y estado de sesión en el header
+│   ├── js.js              # Header/carrito compartido (todas las páginas) + filtros y buscador del catálogo
 │   ├── inicio-sesion.js   # Lógica de login
 │   └── mi-cuenta.js       # Lógica de "Mi cuenta"
 └── img/
     └── poke-bola.png      # Logo
 ```
+
+Las cinco páginas comparten el mismo header (logo, menú, carrito) y el mismo footer, definidos una sola vez en `layout.css` y reutilizados con el mismo HTML en cada página; cada una agrega su propia hoja de estilos solo para su contenido particular.
 
 ## Cómo verlo localmente
 
