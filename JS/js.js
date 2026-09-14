@@ -208,6 +208,16 @@ document.addEventListener("click", (evento) => {
   agregarAlCarrito(carta);
 });
 
+// IR AL DETALLE DE LA CARTA AL HACER CLIC EN ELLA (fuera del botón de compra)
+document.addEventListener("click", (evento) => {
+  if (evento.target.closest(".btn-comprar")) return;
+
+  const carta = evento.target.closest(".card[data-id]");
+  if (!carta) return;
+
+  window.location.href = `producto.html?id=${carta.dataset.id}`;
+});
+
 // SUBIR, BAJAR Y QUITAR PRODUCTOS DESDE EL CARRITO
 drawerItems.addEventListener("click", (evento) => {
   const fila = evento.target.closest(".drawer-item");

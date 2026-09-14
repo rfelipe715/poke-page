@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de producto - PokéStore</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="catalogo-header">
+      <div class="header-contenedor">
+        <div class="logo-tienda">
+          <div class="logo-titulo">
+            <h1>PokéStore</h1>
+            <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+          </div>
+
+          <p>Cartas Pokémon para coleccionistas</p>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Inicio</a>
+          <a href="cartas.html">Cartas</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+          <a href="login.html" id="usuario-header" class="usuario-header">👤 <span id="nombre-header">Iniciar sesión</span></a>
+          <button id="btn-cerrar-sesion-header" class="btn-salir-header" hidden>Salir</button>
+
+          <button class="cart-btn" id="openCart">
+            Carrito 🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+          <h3>Tu carrito</h3>
+          <button class="drawer-close" id="closeCart">×</button>
+        </div>
+
+        <div class="drawer-items" id="drawerItems">
+          <div class="drawer-empty">
+            Tu carrito está vacío.<br />
+            Agrega alguna carta del catálogo.
+          </div>
+        </div>
+
+        <div class="drawer-foot">
+          <div class="drawer-total">
+            <span>Total</span>
+            <span id="drawerTotal">$0</span>
+          </div>
+
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Confirmar pedido
+          </button>
+        </div>
+      </aside>
+    </header>
+
+    <main class="catalogo">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="cartas.html" id="breadcrumbCategoria">Categoría</a>
+        <span>›</span>
+        <span id="breadcrumbProducto" aria-current="page">Producto</span>
+      </nav>
+
+      <section class="detalle-producto">
+        <div class="producto-galeria">
+          <div class="card-img producto-img-principal">
+            <img id="imagenPrincipal" src="" alt="" />
+          </div>
+
+          <div class="producto-miniaturas" id="miniaturas"></div>
+        </div>
+
+        <div class="producto-info">
+          <h1 class="card-title" id="productoNombre"></h1>
+          <p class="card-price" id="productoPrecio"></p>
+          <p class="producto-descripcion" id="productoDescripcion"></p>
+
+          <div class="selector-cantidad qty-row">
+            <button type="button" class="qty-btn" id="restarCantidad">-</button>
+            <span id="cantidadSeleccionada">1</span>
+            <button type="button" class="qty-btn" id="sumarCantidad">+</button>
+          </div>
+
+          <button type="button" class="btn-comprar" id="btnAgregarDetalle">
+            Añadir al carrito
+          </button>
+        </div>
+      </section>
+
+      <section class="productos-relacionados">
+        <h2>Productos relacionados</h2>
+        <div class="grilla-productos" id="relacionadosGrid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <h3>PokéStore</h3>
+      <p>Tu tienda de cartas Pokémon</p>
+      <p>© 2026 PokéStore - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="JS/productos.js"></script>
+    <script src="JS/js.js"></script>
+    <script src="JS/producto-detalle.js"></script>
+  </body>
+</html>
