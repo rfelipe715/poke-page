@@ -412,6 +412,15 @@ footer {
   background-color: var(--color-primario-oscuro);
 }
 
+.form-error {
+  color: var(--color-peligro-oscuro);
+  font-size: 0.8rem;
+}
+
+.newsletter-form .form-error {
+  flex-basis: 100%;
+}
+
 .footer-copy {
   text-align: center;
   color: var(--color-texto-suave);
