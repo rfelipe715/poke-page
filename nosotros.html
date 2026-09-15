@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Conoce PokéStore: un espacio para fans y coleccionistas de cartas Pokémon." />
     <title>Nosotros | PokéStore</title>
+    <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="CSS/index.css" />
     <link rel="stylesheet" href="CSS/nosotros.css" />
@@ -13,19 +14,55 @@
     <header class="catalogo-header">
       <div class="header-contenedor">
         <div class="logo-tienda">
-          <div class="logo-titulo">
-            <a class="nosotros-logo" href="index.html">PokéStore</a>
-            <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
-          </div>
+          <a class="logo-link" href="index.html">
+            <div class="logo-titulo">
+              <span class="nosotros-logo">PokéStore</span>
+              <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+            </div>
+          </a>
+
           <p>Cartas Pokémon para coleccionistas</p>
         </div>
+
         <nav class="menu" aria-label="Navegación principal">
           <a href="index.html">Inicio</a>
           <a href="cartas.html">Cartas</a>
           <a href="nosotros.html" aria-current="page">Nosotros</a>
           <a href="index.html#contacto">Contacto</a>
+          <a href="login.html" id="usuario-header" class="usuario-header">👤 <span id="nombre-header">Iniciar sesión</span></a>
+          <button id="btn-cerrar-sesion-header" class="btn-salir-header" hidden>Salir</button>
+
+          <button class="cart-btn" id="openCart">
+            Carrito 🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
         </nav>
       </div>
+
+      <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+          <h3>Tu carrito</h3>
+          <button class="drawer-close" id="closeCart" aria-label="Cerrar carrito">×</button>
+        </div>
+
+        <div class="drawer-items" id="drawerItems">
+          <div class="drawer-empty">
+            Tu carrito está vacío.<br />
+            Agrega alguna carta del catálogo.
+          </div>
+        </div>
+
+        <div class="drawer-foot">
+          <div class="drawer-total">
+            <span>Total</span>
+            <span id="drawerTotal">$0</span>
+          </div>
+
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Confirmar pedido
+          </button>
+        </div>
+      </aside>
     </header>
 
     <main class="catalogo nosotros-contenido">
@@ -85,9 +122,49 @@
     </main>
 
     <footer>
-      <h3>PokéStore</h3>
-      <p>Tu tienda de cartas Pokémon</p>
-      <p>© 2026 PokéStore - Todos los derechos reservados</p>
+      <div class="footer-contenedor">
+        <div class="footer-col footer-marca">
+          <h3>PokéStore</h3>
+          <p>Tu tienda de cartas Pokémon</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="cartas.html?tipo=fuego">Fuego</a></li>
+            <li><a href="cartas.html?tipo=agua">Agua</a></li>
+            <li><a href="cartas.html?tipo=planta">Planta</a></li>
+            <li><a href="cartas.html?tipo=electrico">Eléctrico</a></li>
+            <li><a href="cartas.html?tipo=psiquico">Psíquico</a></li>
+            <li><a href="cartas.html?tipo=normal">Normal</a></li>
+            <li><a href="cartas.html?tipo=lucha">Lucha</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Medios de pago</h4>
+          <ul class="footer-pagos">
+            <li title="Visa">💳 Visa</li>
+            <li title="Mastercard">💳 Mastercard</li>
+            <li title="Webpay">🏦 Webpay</li>
+            <li title="PayPal">💰 PayPal</li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Recibe ofertas y novedades en tu correo.</p>
+          <form id="formNewsletter" class="newsletter-form">
+            <label for="inputNewsletter">Correo electrónico</label>
+            <input type="email" id="inputNewsletter" name="inputNewsletter" placeholder="tu@correo.com" required>
+            <button type="submit">Suscribirme</button>
+            <span class="form-error" id="errorNewsletter"></span>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2026 PokéStore - Todos los derechos reservados</p>
     </footer>
+    <script src="JS/js.js"></script>
   </body>
 </html>

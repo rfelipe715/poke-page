@@ -53,6 +53,7 @@
 .nosotros-contenido h2 {
   color: #575881;
   font-size: 1.5rem;
+  margin-bottom: 16px;
 }
 
 .nosotros-valores {
@@ -103,6 +104,21 @@
 a:focus-visible {
   outline: 3px solid #0051b3;
   outline-offset: 4px;
+}
+
+@media (max-width: 1000px) {
+  .header-contenedor {
+    flex-direction: column;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .logo-tienda {
+    text-align: center;
+  }
 }
 
 @media (max-width: 750px) {
