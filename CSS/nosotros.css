@@ -1,0 +1,116 @@
+/* Estilos de la página Nosotros */
+.nosotros-logo {
+  color: #0051b3;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu a[aria-current="page"] {
+  color: #0051b3;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.nosotros-contenido {
+  max-width: 1000px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.nosotros-presentacion {
+  padding: 36px 24px;
+  border-top: 4px solid #0051b3;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.nosotros-presentacion img {
+  object-fit: contain;
+}
+
+.nosotros-etiqueta {
+  color: #0051b3;
+  font-weight: bold;
+}
+
+.nosotros-presentacion h1 {
+  margin: 8px 0 16px;
+  color: #0051b3;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+}
+
+.nosotros-presentacion > p {
+  max-width: 680px;
+  margin: 12px auto;
+}
+
+.nosotros-seccion {
+  margin: 36px 0;
+}
+
+.nosotros-contenido h2 {
+  color: #575881;
+  font-size: 1.5rem;
+}
+
+.nosotros-valores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.nosotros-valor {
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.nosotros-valor span {
+  font-size: 2rem;
+}
+
+.nosotros-valor h3 {
+  margin: 12px 0 8px;
+  color: #0051b3;
+}
+
+.nosotros-valor p {
+  margin: 0;
+}
+
+.nosotros-consejos {
+  padding: 20px 24px;
+  background: #fff;
+  border-left: 4px solid #0051b3;
+  border-radius: 8px;
+}
+
+.nosotros-consejos ul {
+  padding-left: 20px;
+}
+
+.nosotros-consejos li + li {
+  margin-top: 10px;
+}
+
+.nosotros-contacto {
+  text-align: center;
+}
+
+a:focus-visible {
+  outline: 3px solid #0051b3;
+  outline-offset: 4px;
+}
+
+@media (max-width: 750px) {
+  .nosotros-valores {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-titulo {
+    justify-content: center;
+  }
+}
