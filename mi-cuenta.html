@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Iniciar sesión | PokeStore</title>
+    <title>Mi cuenta - PokéStore</title>
 
     <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="CSS/inicio-sesion.css">
+    <link rel="stylesheet" href="CSS/mi-cuenta.css">
 </head>
 
 <body>
@@ -16,7 +14,7 @@
     <header class="catalogo-header">
       <div class="header-contenedor">
         <div class="logo-tienda">
-          <a class="logo-link" href="index.html">
+          <a href="index.html" class="logo-link">
             <div class="logo-titulo">
               <h1>PokéStore</h1>
               <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
@@ -67,83 +65,109 @@
       </aside>
     </header>
 
-    <main class="login-page">
 
-        <section class="login-card">
+    <main class="cuenta-contenedor">
 
-            <div class="card-decoration">
-                <div class="pokeball">
-                    <span></span>
-                </div>
-            </div>
 
-            <div class="login-header">
+        <section class="bienvenida">
 
-                <h1>PokeStore</h1>
+            <h2>Mi cuenta</h2>
 
-                <p>
-                    Inicia sesión para continuar
-                </p>
-
-            </div>
-
-            <form>
-
-                <div class="form-group">
-
-                    <label for="input-email">
-                        Correo electrónico
-                    </label>
-
-                    <input id="input-email" type="email" placeholder="correo@ejemplo.com" required autocomplete="email">
-
-                    <span class="form-error" id="error-email"></span>
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="input-password">
-                        Contraseña
-                    </label>
-
-                    <input id="input-password" type="password" placeholder="Ingresa tu contraseña" required autocomplete="current-password">
-
-                    <span class="form-error" id="error-password"></span>
-
-                </div>
-
-                <div class="login-options">
-
-                    <label class="remember">
-                        <input type="checkbox">
-                        Recordarme
-                    </label>
-
-                    <a href="#" class="forgot">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-
-                </div>
-
-                <span class="form-error" id="error-login"></span>
-
-                <button id="btn-inicio-sesion" type="button">
-                    INICIAR SESIÓN
-                </button>
-
-            </form>
-
-            <div class="register">
-
-                <p>
-                    ¿No tienes una cuenta?
-                    <a href="#">Regístrate</a>
-                </p>
-
-            </div>
+            <p>
+                Administra tus datos y revisa tus pedidos.
+            </p>
 
         </section>
+
+
+
+        <div class="cuenta-grid">
+
+
+            <!-- MIS DATOS -->
+
+            <section class="cuenta-card">
+
+                <h2>👤 Mis datos</h2>
+
+
+                <div class="form-group">
+
+                    <label>Nombre</label>
+
+                    <input
+                        id="nombre"
+                        type="text"
+                        placeholder="Nombre">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Correo electrónico</label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Correo">
+
+                </div>
+
+
+                <button
+                    id="btn-actualizar"
+                    class="btn-actualizar">
+
+                    Actualizar datos
+
+                </button>
+
+            </section>
+
+
+
+            <!-- MIS PEDIDOS -->
+
+            <section class="cuenta-card">
+
+                <h2>📦 Mis pedidos</h2>
+
+
+                <div
+                    id="lista-pedidos"
+                    class="lista-pedidos">
+
+
+                    <div class="sin-pedidos">
+
+                        <p>
+                            Todavía no tienes pedidos.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <div class="cerrar-sesion-contenedor">
+
+            <button
+                id="btn-cerrar-sesion"
+                class="btn-cerrar-sesion">
+
+                Cerrar sesión
+
+            </button>
+
+        </div>
+
 
     </main>
 
@@ -193,7 +217,7 @@
     </footer>
 
     <script src="JS/js.js"></script>
-    <script src="JS/inicio-sesion.js"></script>
+    <script src="JS/mi-cuenta.js"></script>
 
 </body>
 

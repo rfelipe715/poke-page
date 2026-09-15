@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cartas Pokémon</title>
+    <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -11,10 +12,12 @@
     <header class="catalogo-header">
       <div class="header-contenedor">
         <div class="logo-tienda">
-          <div class="logo-titulo">
-            <h1>PokéStore</h1>
-            <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
-          </div>
+          <a href="index.html" class="logo-link">
+            <div class="logo-titulo">
+              <h1>PokéStore</h1>
+              <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+            </div>
+          </a>
 
           <p>Cartas Pokémon para coleccionistas</p>
         </div>
@@ -24,6 +27,8 @@
           <a href="cartas.html">Cartas</a>
           <a href="nosotros.html">Nosotros</a>
           <a href="index.html#contacto">Contacto</a>
+          <a href="login.html" id="usuario-header" class="usuario-header">👤 <span id="nombre-header">Iniciar sesión</span></a>
+          <button id="btn-cerrar-sesion-header" class="btn-salir-header" hidden>Salir</button>
 
           <button class="cart-btn" id="openCart">
             Carrito 🛒
@@ -85,7 +90,7 @@
 
         <div class="grilla-productos pagina-cartas">
           <!-- 1 -->
-          <article class="card" data-tipo="electrico">
+          <article class="card" data-tipo="electrico" data-id="pikachu">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/58.png"
@@ -102,7 +107,7 @@
           </article>
 
           <!-- 2 -->
-          <article class="card" data-tipo="fuego">
+          <article class="card" data-tipo="fuego" data-id="charizard">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/4.png"
@@ -119,7 +124,7 @@
           </article>
 
           <!-- 3 -->
-          <article class="card" data-tipo="agua">
+          <article class="card" data-tipo="agua" data-id="blastoise">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/2.png"
@@ -136,7 +141,7 @@
           </article>
 
           <!-- 4 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="venusaur">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/15.png"
@@ -153,7 +158,7 @@
           </article>
 
           <!-- 5 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="bulbasaur">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/44.png"
@@ -169,7 +174,7 @@
           </article>
 
           <!-- 6 -->
-          <article class="card" data-tipo="fuego">
+          <article class="card" data-tipo="fuego" data-id="charmander">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/46.png"
@@ -185,7 +190,7 @@
           </article>
 
           <!-- 7 -->
-          <article class="card" data-tipo="agua">
+          <article class="card" data-tipo="agua" data-id="squirtle">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/63.png"
@@ -201,7 +206,7 @@
           </article>
 
           <!-- 8 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="caterpie">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/45.png"
@@ -217,7 +222,7 @@
           </article>
 
           <!-- 9 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="metapod">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/54.png"
@@ -233,7 +238,7 @@
           </article>
 
           <!-- 10 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="butterfree">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/33.png"
@@ -250,7 +255,7 @@
           </article>
 
           <!-- 11 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="weedle">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/69.png"
@@ -266,7 +271,7 @@
           </article>
 
           <!-- 12 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="kakuna">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/33.png"
@@ -282,7 +287,7 @@
           </article>
 
           <!-- 13 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="beedrill">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/17.png"
@@ -299,7 +304,7 @@
           </article>
 
           <!-- 14 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="pidgey">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/57.png"
@@ -315,7 +320,7 @@
           </article>
 
           <!-- 15 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="pidgeotto">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/22.png"
@@ -331,7 +336,7 @@
           </article>
 
           <!-- 16 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="rattata">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/61.png"
@@ -347,7 +352,7 @@
           </article>
 
           <!-- 17 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="spearow">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/62.png"
@@ -363,7 +368,7 @@
           </article>
 
           <!-- 18 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="ekans">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/46.png"
@@ -379,7 +384,7 @@
           </article>
 
           <!-- 19 -->
-          <article class="card" data-tipo="electrico">
+          <article class="card" data-tipo="electrico" data-id="raichu">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/14.png"
@@ -396,7 +401,7 @@
           </article>
 
           <!-- 20 -->
-          <article class="card" data-tipo="lucha">
+          <article class="card" data-tipo="lucha" data-id="sandshrew">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/64.png"
@@ -412,7 +417,7 @@
           </article>
 
           <!-- 21 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="nidoran">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/55.png"
@@ -428,7 +433,7 @@
           </article>
 
           <!-- 22 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="nidorino">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/37.png"
@@ -444,7 +449,7 @@
           </article>
 
           <!-- 23 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="clefairy">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/5.png"
@@ -461,7 +466,7 @@
           </article>
 
           <!-- 24 -->
-          <article class="card" data-tipo="fuego">
+          <article class="card" data-tipo="fuego" data-id="vulpix">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/68.png"
@@ -477,7 +482,7 @@
           </article>
 
           <!-- 25 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="jigglypuff">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/54.png"
@@ -493,7 +498,7 @@
           </article>
 
           <!-- 26 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="zubat">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/57.png"
@@ -509,7 +514,7 @@
           </article>
 
           <!-- 27 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="oddish">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/63.png"
@@ -525,7 +530,7 @@
           </article>
 
           <!-- 28 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="paras">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/59.png"
@@ -541,7 +546,7 @@
           </article>
 
           <!-- 29 -->
-          <article class="card" data-tipo="planta">
+          <article class="card" data-tipo="planta" data-id="venonat">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/63.png"
@@ -557,7 +562,7 @@
           </article>
 
           <!-- 30 -->
-          <article class="card" data-tipo="lucha">
+          <article class="card" data-tipo="lucha" data-id="diglett">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/47.png"
@@ -573,7 +578,7 @@
           </article>
 
           <!-- 31 -->
-          <article class="card" data-tipo="normal">
+          <article class="card" data-tipo="normal" data-id="meowth">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/56.png"
@@ -589,7 +594,7 @@
           </article>
 
           <!-- 32 -->
-          <article class="card" data-tipo="agua">
+          <article class="card" data-tipo="agua" data-id="psyduck">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/53.png"
@@ -605,7 +610,7 @@
           </article>
 
           <!-- 33 -->
-          <article class="card" data-tipo="lucha">
+          <article class="card" data-tipo="lucha" data-id="mankey">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/55.png"
@@ -621,7 +626,7 @@
           </article>
 
           <!-- 34 -->
-          <article class="card" data-tipo="fuego">
+          <article class="card" data-tipo="fuego" data-id="growlithe">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/28.png"
@@ -638,7 +643,7 @@
           </article>
 
           <!-- 35 -->
-          <article class="card" data-tipo="agua">
+          <article class="card" data-tipo="agua" data-id="poliwag">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/59.png"
@@ -654,7 +659,7 @@
           </article>
 
           <!-- 36 -->
-          <article class="card" data-tipo="psiquico">
+          <article class="card" data-tipo="psiquico" data-id="abra">
             <div class="card-img">
               <img src="https://images.pokemontcg.io/base1/43.png" alt="Abra" />
             </div>
@@ -667,7 +672,7 @@
           </article>
 
           <!-- 37 -->
-          <article class="card" data-tipo="lucha">
+          <article class="card" data-tipo="lucha" data-id="machop">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/52.png"
@@ -683,7 +688,7 @@
           </article>
 
           <!-- 38 -->
-          <article class="card" data-tipo="electrico">
+          <article class="card" data-tipo="electrico" data-id="magnemite">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/53.png"
@@ -699,7 +704,7 @@
           </article>
 
           <!-- 39 -->
-          <article class="card" data-tipo="psiquico">
+          <article class="card" data-tipo="psiquico" data-id="gastly">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/33.png"
@@ -715,7 +720,7 @@
           </article>
 
           <!-- 40 -->
-          <article class="card" data-tipo="psiquico">
+          <article class="card" data-tipo="psiquico" data-id="mewtwo">
             <div class="card-img">
               <img
                 src="https://images.pokemontcg.io/base1/10.png"
@@ -733,6 +738,51 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="footer-contenedor">
+        <div class="footer-col footer-marca">
+          <h3>PokéStore</h3>
+          <p>Tu tienda de cartas Pokémon</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="cartas.html?tipo=fuego">Fuego</a></li>
+            <li><a href="cartas.html?tipo=agua">Agua</a></li>
+            <li><a href="cartas.html?tipo=planta">Planta</a></li>
+            <li><a href="cartas.html?tipo=electrico">Eléctrico</a></li>
+            <li><a href="cartas.html?tipo=psiquico">Psíquico</a></li>
+            <li><a href="cartas.html?tipo=normal">Normal</a></li>
+            <li><a href="cartas.html?tipo=lucha">Lucha</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Medios de pago</h4>
+          <ul class="footer-pagos">
+            <li title="Visa">💳 Visa</li>
+            <li title="Mastercard">💳 Mastercard</li>
+            <li title="Webpay">🏦 Webpay</li>
+            <li title="PayPal">💰 PayPal</li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Recibe ofertas y novedades en tu correo.</p>
+          <form id="formNewsletter" class="newsletter-form">
+            <label for="inputNewsletter">Correo electrónico</label>
+            <input type="email" id="inputNewsletter" name="inputNewsletter" placeholder="tu@correo.com" required>
+            <button type="submit">Suscribirme</button>
+            <span class="form-error" id="errorNewsletter"></span>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2026 PokéStore - Todos los derechos reservados</p>
+    </footer>
 
     <script src="JS/js.js"></script>
   </body>
