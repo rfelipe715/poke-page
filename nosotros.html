@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conoce PokéStore: un espacio para fans y coleccionistas de cartas Pokémon." />
+    <title>Nosotros | PokéStore</title>
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/nosotros.css" />
+  </head>
+  <body>
+    <header class="catalogo-header">
+      <div class="header-contenedor">
+        <div class="logo-tienda">
+          <a class="logo-link" href="index.html">
+            <div class="logo-titulo">
+              <span class="nosotros-logo">PokéStore</span>
+              <img src="img/poke-bola.png" alt="Pokébola" class="pokebola-logo" />
+            </div>
+          </a>
+
+          <p>Cartas Pokémon para coleccionistas</p>
+        </div>
+
+        <nav class="menu" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a href="cartas.html">Cartas</a>
+          <a href="nosotros.html" aria-current="page">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+          <a href="login.html" id="usuario-header" class="usuario-header">👤 <span id="nombre-header">Iniciar sesión</span></a>
+          <button id="btn-cerrar-sesion-header" class="btn-salir-header" hidden>Salir</button>
+
+          <button class="cart-btn" id="openCart">
+            Carrito 🛒
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+          <h3>Tu carrito</h3>
+          <button class="drawer-close" id="closeCart" aria-label="Cerrar carrito">×</button>
+        </div>
+
+        <div class="drawer-items" id="drawerItems">
+          <div class="drawer-empty">
+            Tu carrito está vacío.<br />
+            Agrega alguna carta del catálogo.
+          </div>
+        </div>
+
+        <div class="drawer-foot">
+          <div class="drawer-total">
+            <span>Total</span>
+            <span id="drawerTotal">$0</span>
+          </div>
+
+          <button class="checkout-btn" id="checkoutBtn" disabled>
+            Confirmar pedido
+          </button>
+        </div>
+      </aside>
+    </header>
+
+    <main class="catalogo nosotros-contenido">
+      <section class="nosotros-presentacion" aria-labelledby="nosotros-titulo">
+        <img src="img/poke-bola.png" alt="" width="96" height="96" />
+        <p class="nosotros-etiqueta">¡Bienvenido, entrenador!</p>
+        <h1 id="nosotros-titulo">Sobre nosotros</h1>
+        <p>En PokéStore compartimos la emoción de encontrar esa carta especial.
+          Somos una tienda dedicada a las cartas Pokémon y un espacio para
+          quienes disfrutan coleccionar, jugar y descubrir nuevos favoritos.</p>
+        <div class="ver-mas"><a href="cartas.html">Explora nuestras cartas</a></div>
+      </section>
+
+      <section class="nosotros-seccion" aria-labelledby="mision-titulo">
+        <h2 id="mision-titulo">Nuestra misión</h2>
+        <p>Queremos acercar el mundo de las cartas Pokémon a todos los fanáticos,
+          desde quienes comienzan su primera colección hasta quienes buscan
+          completar su álbum. Cada colección tiene una historia y queremos
+          acompañarte en la tuya.</p>
+      </section>
+
+      <section class="nosotros-seccion" aria-labelledby="valores-titulo">
+        <h2 id="valores-titulo">Lo que nos mueve</h2>
+        <div class="nosotros-valores">
+          <article class="nosotros-valor">
+            <span aria-hidden="true">⚡</span>
+            <h3>Pasión Pokémon</h3>
+            <p>Nos entusiasman los Pokémon, sus historias y la emoción de descubrir una nueva carta favorita.</p>
+          </article>
+          <article class="nosotros-valor">
+            <span aria-hidden="true">🤝</span>
+            <h3>Comunidad</h3>
+            <p>Creemos en compartir esta afición con respeto y dar la bienvenida a nuevos coleccionistas.</p>
+          </article>
+          <article class="nosotros-valor">
+            <span aria-hidden="true">🌱</span>
+            <h3>Para comenzar y crecer</h3>
+            <p>No importa cuántas cartas tengas: lo mejor es disfrutar cada paso de tu colección.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="nosotros-consejos" aria-labelledby="consejos-titulo">
+        <h2 id="consejos-titulo">Cuida tu colección</h2>
+        <ul>
+          <li>Usa fundas para proteger tus cartas de rayones.</li>
+          <li>Guárdalas en un álbum, lejos de la humedad y del sol directo.</li>
+          <li>Ordénalas por tipo, expansión o Pokémon favorito para encontrarlas fácilmente.</li>
+        </ul>
+      </section>
+
+      <section class="nosotros-seccion nosotros-contacto" aria-labelledby="contacto-titulo">
+        <h2 id="contacto-titulo">Tu próxima aventura comienza aquí</h2>
+        <p>¿Tienes alguna pregunta? Nos encantará saber de ti.</p>
+        <div class="ver-mas"><a href="index.html#contacto">Contáctanos</a></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-contenedor">
+        <div class="footer-col footer-marca">
+          <h3>PokéStore</h3>
+          <p>Tu tienda de cartas Pokémon</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="cartas.html?tipo=fuego">Fuego</a></li>
+            <li><a href="cartas.html?tipo=agua">Agua</a></li>
+            <li><a href="cartas.html?tipo=planta">Planta</a></li>
+            <li><a href="cartas.html?tipo=electrico">Eléctrico</a></li>
+            <li><a href="cartas.html?tipo=psiquico">Psíquico</a></li>
+            <li><a href="cartas.html?tipo=normal">Normal</a></li>
+            <li><a href="cartas.html?tipo=lucha">Lucha</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Medios de pago</h4>
+          <ul class="footer-pagos">
+            <li title="Visa">💳 Visa</li>
+            <li title="Mastercard">💳 Mastercard</li>
+            <li title="Webpay">🏦 Webpay</li>
+            <li title="PayPal">💰 PayPal</li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Recibe ofertas y novedades en tu correo.</p>
+          <form id="formNewsletter" class="newsletter-form">
+            <label for="inputNewsletter">Correo electrónico</label>
+            <input type="email" id="inputNewsletter" name="inputNewsletter" placeholder="tu@correo.com" required>
+            <button type="submit">Suscribirme</button>
+            <span class="form-error" id="errorNewsletter"></span>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2026 PokéStore - Todos los derechos reservados</p>
+    </footer>
+    <script src="JS/js.js"></script>
+  </body>
+</html>
